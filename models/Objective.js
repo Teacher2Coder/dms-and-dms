@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequalize');
+const { Model, DataTypes } = require('sequelize');
 const sequalize = require('../config/connection');
 
 class Objective extends Model { }
