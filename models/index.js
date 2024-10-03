@@ -2,7 +2,7 @@ const Characters = require ('./Characters');
 const Rules = require ('./Rules');
 const Stories = require ('./Stories');
 const Objective = require ('./Objective');
-const Class = require ('./Class');
+const Class = require ('./class');
 
 Stories.hasOne(Objective, {
     foriegnKey: 'stories_id',
