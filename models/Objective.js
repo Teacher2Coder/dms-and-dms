@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequalize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 class Objective extends Model { }
 
@@ -17,7 +17,7 @@ Objective.init(
         },
     },
     {
-        sequalize,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,

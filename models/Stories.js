@@ -1,5 +1,5 @@
 const { Model, Datatypes } = require('sequelize');
-const sequalize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 class Stories extends Model {}
 
@@ -27,6 +27,13 @@ Stories.init(
             },
         },
     },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'stories',
+    }
 );
 
 module.exports = Stories

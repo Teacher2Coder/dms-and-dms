@@ -1,5 +1,5 @@
 const { Model, Datatypes } = require('sequelize');
-const sequalize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 class Rules extends Model { }
 
@@ -15,6 +15,13 @@ Rules.init(
             type: Datatypes.INTEGER,
             allowNull: false,
         },
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'rules',
     }
 );
 
