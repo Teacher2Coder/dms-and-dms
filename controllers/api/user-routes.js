@@ -57,10 +57,10 @@ router.post('/login', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  });
+});
   
   // Logout
-  router.post('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
@@ -68,4 +68,6 @@ router.post('/login', async (req, res) => {
     } else {
       res.status(404).end();
     }
-  });
+});
+
+module.exports = router;
