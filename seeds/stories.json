@@ -1,0 +1,27 @@
+[
+    {
+        "world": "Fantasy Land",
+        "questGiver": "King Arthur",
+        "Quest_id": 1
+    },
+    {
+        "world": "Mystic Mountains",
+        "questGiver": "Gandalf",
+        "Quest_id": 2
+    },
+    {
+        "world": "Enchanted Forest",
+        "questGiver": "Elena the Wise",
+        "Quest_id": 3
+    },
+    {
+        "world": "Dark Dungeon",
+        "questGiver": "The Mysterious Stranger",
+        "Quest_id": 1
+    },
+    {
+        "world": "Lost City",
+        "questGiver": "Explorer Jane",
+        "Quest_id": 2
+    }
+]
