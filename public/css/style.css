@@ -1,0 +1,13 @@
+#full-screen {
+    min-height: 100vh;
+    margin: 0;
+    display: grid; grid-template-rows: auto 1fr auto;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(/images/logo.png)
+}
