@@ -3,26 +3,6 @@ const { Character } = require('../models');
 
 const characterData = require('./characterSeeds.json');
 
-[
-//     // {
-//     //     name: Shammy
-//     //     class: Cleric/
-//     //     skills: 
-//     //     alignment: 
-//     //     strength: 
-//     //     intelligence: 
-        
-//     // },
-//     // {
-//     //     name:
-//     //     class: 
-//     //     skills: 
-//     //     alignment: 
-//     //     strength: 
-//     //     intelligence: 
-    
-//     // }
-// ];
 
 // function to seed characters into the db 
 const seedCharacters = async () => {
