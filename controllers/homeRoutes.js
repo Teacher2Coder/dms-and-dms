@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
+<<<<<<< HEAD
 router.get('/', withAuth, async (req, res) => {
     try {
       const userData = await User.findAll({
@@ -19,6 +20,17 @@ router.get('/', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
+=======
+router.get('/', async () => {
+  try {
+    const hello = 'hello'
+    res.render('homepage', { hello })
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+})
+>>>>>>> 1ba2eddd05abb81defa64b75c24f34be9d4988fc
 
 
 
