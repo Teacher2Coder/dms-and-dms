@@ -1,0 +1,29 @@
+[    
+    {
+        "name": "Shammy",
+        "class": "Cleric/Sorcerer",
+        "skills": "Charlatan",
+        "alignment": "Chaotic good", 
+        "strength": "8",
+        "intelligence": "12"
+        
+    },
+    {
+        "name": "Nurbit",
+        "class": "Bard",
+        "skills": "Musician",
+        "alignment": "Chaotic good",
+        "strength": "8",
+        "intelligence": "14"
+    
+    },
+    {
+        "name": "Barrork",
+        "class": "Paladin/Cleric",
+        "skills": "Swordsman",
+        "alignment": "Lawful Good",
+        "strength": "15",
+        "intelligence": "8"
+       
+       }
+]
