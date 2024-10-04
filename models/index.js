@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-const User = require('./user');
-
-module.exports = { User };
-=======
 const Characters = require ('./Characters');
 const Rules = require ('./Rules');
 const Stories = require ('./Stories');
@@ -28,4 +23,3 @@ Class.belongsTo(Characters, {
     foreignKey: 'stories_id',
     onDelete: 'CASCADE',
 })
->>>>>>> 1ba2eddd05abb81defa64b75c24f34be9d4988fc
