@@ -8,7 +8,7 @@ Objective.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey: false,
+            primaryKey: true,
             autoIncrement: true,
         },
         type: {
