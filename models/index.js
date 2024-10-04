@@ -21,16 +21,9 @@ Objective.belongsTo(Stories, {
 //     onDelete: 'CASCADE',
 // });
 
-<<<<<<< HEAD
-Class.belongsTo(Characters, {
-    foreignKey: 'stories_id',
-    onDelete: 'CASCADE',
-})
-=======
 // Class.belongsTo(Characters, {
 //     foreignKey: 'stories_id',
 //     onDelete: 'CASCADE',
 // })
 
 module.exports = {Characters, Rules, Stories, Objective, Class, User};
->>>>>>> fd9ced9dc3e92d4deeaaa1158dd4ddfc90e3370d
