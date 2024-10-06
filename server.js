@@ -33,16 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Define your routes here
-app.get('/', (req, res) => {
-    res.render('homepage', { title: 'Home Page' });
-});
-
-app.get('/about', (req, res) => {
-    res.render('about', { title: 'About Us' });
-});
-
-// Use other routes from controllers if you have them
+// Point to routes directory
 app.use(routes);
 
 // Sync sequelize and start the server
