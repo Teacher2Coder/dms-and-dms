@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define your routes here
 app.get('/', (req, res) => {
-    res.render('home', { title: 'Home Page' });
+    res.render('homepage', { title: 'Home Page' });
 });
 
 app.get('/about', (req, res) => {
