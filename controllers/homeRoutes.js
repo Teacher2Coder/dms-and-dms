@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const User = require('../models/user');
 const withAuth = require('../utils/auth');
 
+
+// URL looks like this: localhost.3001/
 router.get('/', async (req, res) => {
   try {
     res.render('homepage')
@@ -11,16 +13,14 @@ router.get('/', async (req, res) => {
   }
 })
 
-
-
-
+// URL looks like this: localhost.3001/login
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
   
-    res.render('login');
-  });
-  
-  module.exports = router;
+module.exports = router;
