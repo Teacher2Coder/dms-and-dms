@@ -4,7 +4,6 @@
     display: grid; grid-template-rows: auto 1fr auto;
     background-repeat: no-repeat;
     background-size: 100%;
-    position:fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -33,4 +32,15 @@
     width: 45%;
     margin: 2%;
     text-align: center;
+}
+
+.about {
+    padding: 5px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.developer {
+    padding: 10px;
 }
