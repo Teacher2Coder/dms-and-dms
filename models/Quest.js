@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Objective extends Model { }
+class Quest extends Model { }
 
 Objective.init(
     {
@@ -15,6 +15,14 @@ Objective.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        quest_giver: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        rewards: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     },
     {
         sequelize,
@@ -25,4 +33,4 @@ Objective.init(
     }
 );
 
-module.exports = Objective
+module.exports = Quest;
