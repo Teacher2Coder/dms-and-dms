@@ -9,7 +9,16 @@ router.get('/', async (req, res) => {
     console.error(err);
     res.status(500).json(err);
   }
-})
+});
+
+// router.get('/characters/', withAuth, async (req, res) => {
+//   try {
+//   res.render('characterpage')
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 
 
