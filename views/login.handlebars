@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
+<div class="card login-card">
     <h1>Login</h1>
     <form id="login-form" action="/login" method="POST">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <div class="login-input">
+            <label class="field" for="username">Username:</label>
+            <input class="field" type="text" id="username" name="username" required>
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <div class="login-input">
+            <label class="field" for="password">Password:</label>
+            <input class="field" type="password" id="password" name="password" required>
         </div>
-        <button type="submit">Login</button>
+        <button class="btn btn-danger" type="submit">Login</button>
         <p id="error-message">{{error}}</p>
     </form>
-</body>
-</html>
+</div>
+<div class="card login-card">
+    <h3>New here? Sign up now!</h3>
+    <a class="btn btn-danger" id="register-btn" href="/register">Register</a>
+</div>
