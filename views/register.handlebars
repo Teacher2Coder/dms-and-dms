@@ -1,19 +1,26 @@
-<form>
-    <div class="form-group">
-        <label>Username:</label>
-        <input id="register-username">
-    </div>
-    <div class="form-group">
-        <label>Email:</label>
-        <input id="register-email">
-    </div>
-    <div class="form-group">
-        <label>Password:</label>
-        <input id="register-password">
-    </div>
-    <div class="form-group">
-        <button id="register-btn" href="/">Register</button>
-    </div>
-</form>
+<div class=" card login-card">
+    <h1>Register</h1>
+    <form>
+        <div class="login-input">
+            <label class="field">Username:</label>
+            <input class="field" id="register-username">
+        </div>
+        <div class="login-input">
+            <label class="field">Email:</label>
+            <input class="field" id="register-email">
+        </div>
+        <div class="login-input">
+            <label class="field">Password:</label>
+            <input class="field" id="register-password">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-danger" id="register-btn" href="/">Register</button>
+        </div>
+    </form>
+</div>
+<div class="card login-card">
+    <h3>Already have an account? Sign in now!</h3>
+    <a class="btn btn-danger" id="register-btn" href="/login">Login</a>
+</div>
 
 <script src="/js/register.js"></script>

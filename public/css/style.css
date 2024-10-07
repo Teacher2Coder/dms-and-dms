@@ -44,3 +44,28 @@
 .developer {
     padding: 10px;
 }
+
+.login-card {
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-input {
+    display: flex;
+    justify-content: space-around;
+}
+
+.field {
+    width: 50%;
+    text-align: center;
+    margin: 10px;
+}
+
+#register-btn {
+    width: 30%;
+    margin: 0 auto;
+}
