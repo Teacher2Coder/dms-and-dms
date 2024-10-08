@@ -1,41 +1,47 @@
 [    
     {
         "name": "Shammy",
-        "author": "",
+        "author": "ethan",
+        "description": "This is a chaotic good sorceror with a heart of gold",
         "class": "Cleric/Sorcerer",
         "skills": "Charlatan",
+        "race": "Lizard Man",
         "alignment": "Chaotic good", 
         "strength": "8",
         "dexterity": "12",
-        "constitution": "",
-        "intelligence": "",
-        "wisdom": "",
-        "charisma": ""
+        "constitution": "10",
+        "intelligence": "8",
+        "wisdom": "18",
+        "charisma": "6"
     },
     {
         "name": "Nurbit",
-        "author": "",
+        "author": "nick",
+        "description": "This is a Bard who tries to tolve all of his problems with rock and roll",
         "class": "Bard",
         "skills": "Musician",
+        "race": "Lion Person",
         "alignment": "Chaotic Good",
         "strength": "8",
         "dexterity": "12",
-        "constitution": "",
-        "intelligence": "",
-        "wisdom": "",
-        "charisma": ""
+        "constitution": "14",
+        "intelligence": "10",
+        "wisdom": "10",
+        "charisma": "18"
     },
     {
         "name": "Barrork",
-        "author": "",
+        "author": "bridgett",
+        "description": "This swordsman is basically a John Snow ripoff",
         "class": "Paladin/Cleric",
         "skills": "Swordsman",
+        "race": "Human",
         "alignment": "Lawful Good",
         "strength": "15",
         "dexterity": "12",
-        "constitution": "",
-        "intelligence": "",
-        "wisdom": "",
-        "charisma": ""
+        "constitution": "15",
+        "intelligence": "7",
+        "wisdom": "9",
+        "charisma": "16"
        }
 ]

@@ -11,21 +11,23 @@ Characters.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        class: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         author: {
-            type
-        },
-        description: {
-
-        },
-        skills: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        name: {
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        class: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        skills: {
             type: DataTypes.STRING,
             allowNull: false,
         },

@@ -11,6 +11,10 @@ Quest.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        author: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         description: {
             type: DataTypes.TEXT,
             allowNull: false,
