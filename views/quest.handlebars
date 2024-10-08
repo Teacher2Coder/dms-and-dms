@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{quest.type}} Details</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to CSS file -->
+</head>
+<body>
+<header>
+    <h1>Welcome to the Quest Homepage.</h1>
+
+</header>
+
+<main>
+<h2>Available Quests</h2>
+<ul>
+{{#each quests}}
+ <li>
+         <h3>{{this.type}}</h3>
+       <p>Quest Giver: {{this.quest_giver}}</p>
+         <p>Rewards: {{this.rewards}}</p>
+         </li>
+     {{else}}
+ <li>No quests available at the moment.</li>
+      {{/each}}
+     </ul>
+</main>
+
+<footer>
+    <p> Quest </p>
+</footer>
+
+</body>
+</html>
