@@ -31,5 +31,13 @@ router.get('/contact', async (req, res) => {
         res.status(500).json(err);
     }
 });
+router.get('/dice', async (req, res) => {
+    try {
+        res.render('dice')
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
