@@ -1,0 +1,51 @@
+<div class="card" style="padding: 20px;">
+    <h2 style="text-align: center;">User: {{userDataPlain.username}}</h2>
+    <h4 style="text-align: center; margin-top: 40px;">User Bio:</h4>
+    <p>{{userDataPlain.bio}}</p>
+</div>
+<div style="display: flex; flex-direction: rows; flex-wrap: wrap; justify-content: center;">
+    <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
+        <h4>{{userDataPlain.username}}'s Characters</h4 >
+        {{#each characterDataPlain as |character|}}
+        <div class="card" style="padding: 15px;">
+            <a href="/characters/{{character.id}}" style="text-decoration: none;">
+                <h5 style="color: red;">{{character.name}}</h5>
+                <p style="color: black;">{{character.description}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
+        <h4>{{userDataPlain.username}}'s Quests</h4>
+        {{#each questDataPlain as |quest|}}
+        <div class="card" style="padding: 15px;">
+            <a href="/characters/{{quest.id}}" style="text-decoration: none;">
+                <h5 style="color: red;">{{quest.name}}</h5>
+                <p style="color: black;">{{quest.description}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
+        <h4>{{userDataPlain.username}}'s Stories</h4>
+        {{#each storyDataPlain as |story|}}
+        <div class="card" style="padding: 15px;">
+            <a href="/characters/{{story.id}}" style="text-decoration: none;">
+                <h5 style="color: red;">{{story.name}}</h5>
+                <p style="color: black;">{{story.description}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+    <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
+        <h4>{{userDataPlain.username}}'s Rules</h4>
+        {{#each ruleDataPlain as |rule|}}
+        <div class="card" style="padding: 15px;">
+            <a href="/characters/{{rule.id}}" style="text-decoration: none;">
+                <h5 style="color: red;">{{rule.category}}</h5>
+                <p style="color: black;">{{rule.description}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>

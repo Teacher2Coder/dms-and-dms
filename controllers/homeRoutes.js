@@ -52,7 +52,8 @@ router.get('/', async (req, res) => {
       firstQuest, secondQuest, thirdQuest,
       firstStory, secondStory, thirdStory,
       firstRule, secondRule, thirdRule,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      user: req.session.user
      })
   } catch (err) {
     console.error(err);
