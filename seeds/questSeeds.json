@@ -1,11 +1,30 @@
 [
     {
-        "type": "Objective Type 1"
+        "description": "Objective Type 1",
+        "author": "ethan",
+        "quest_giver": "Gandalf",
+        "location": "Mordor",
+        "rewards": "A really cool hat"
     },
     {
-        "type": "Objective Type 2"
+        "description": "Objective Type 2",
+        "author": "nick",
+        "quest_giver": "The Hungry Elf",
+        "location": "The Chocolate Factory",
+        "rewards": "A really cool shirt"
     },
     {
-        "type": "Objective Type 3"
+        "description": "Objective Type 3",
+        "author": "bridgett",
+        "quest_giver": "A random monkey",
+        "location": "Timbuktu",
+        "rewards": "Some really cool shoes"
+    },
+    {
+        "description": "Objective Type 4",
+        "author": "jocelyn",
+        "quest_giver": "Grandpa Joe",
+        "location": "The Apple Headquarters",
+        "rewards": "A really cool umbrella"
     }
 ]

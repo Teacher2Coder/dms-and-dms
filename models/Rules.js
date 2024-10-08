@@ -11,8 +11,12 @@ Rules.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        author: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         category: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         description: {

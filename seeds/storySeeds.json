@@ -1,27 +1,42 @@
 [
     {
+        "author": "ethan",
         "world": "Fantasy Land",
-        "questGiver": "King Arthur",
-        "Quest_id": 1
+        "description": "You go and do hood rat stuff with your friends",
+        "main_villain": "12",
+        "potential_factions": "5-0 and your friends",
+        "levels": "recommended to be at least level 1"
     },
     {
+        "author": "nick",
         "world": "Mystic Mountains",
-        "questGiver": "Gandalf",
-        "Quest_id": 2
+        "description": "You go and climb mountains with your friends",
+        "main_villain": "Your aging back",
+        "potential_factions": "The Boyz N Tha Hood",
+        "levels": "recommended to be at least level 2"
     },
     {
+        "author": "bridgett",
         "world": "Enchanted Forest",
-        "questGiver": "Elena the Wise",
-        "Quest_id": 3
+        "description": "You go and explore the forrest with your friends",
+        "main_villain": "Man-Bear-Pig",
+        "potential_factions": "Al Gore and the Man-Bear-Pig Society",
+        "levels": "recommended to be at least level 3"
     },
     {
+        "author": "jocelyn",
         "world": "Dark Dungeon",
-        "questGiver": "The Mysterious Stranger",
-        "Quest_id": 1
+        "description": "You go and do hood rat stuff with your friends, but in a dungeon this time",
+        "main_villain": "Them RATZ",
+        "potential_factions": "Them RATZ",
+        "levels": "recommended to be at least level 4"
     },
     {
+        "author": "noah",
         "world": "Lost City",
-        "questGiver": "Explorer Jane",
-        "Quest_id": 2
+        "description": "You are trying to find this city that got lost.",
+        "main_villain": "Google Maps",
+        "potential_factions": "Google, Apple, and the other tech giants",
+        "levels": "recommended to be at least level 5"
     }
 ]

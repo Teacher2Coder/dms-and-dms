@@ -11,7 +11,7 @@ Characters.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        class: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -20,15 +20,14 @@ Characters.init(
             allowNull: false,
         },
         description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        class: {
             type: DataTypes.STRING,
             allowNull: false,
-
         },
         skills: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
