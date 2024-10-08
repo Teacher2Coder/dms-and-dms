@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const { User } = require('../../../models/User');
-// Import User model
+const Users = require('../../../models/User');
 
 // URL looks like this: localhost.3001/api/users
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const dbUserData = await Users.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
@@ -25,37 +24,45 @@ router.post('/', async (req, res) => {
 });
 
 // Login
+// URL looks like localhost:3001/api/users/login
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
-      where: {
-        email: req.body.email,
-      },
-    });
-  
-    if (!dbUserData) {
+    console.log("These are the inputed values");
+    console.log(req.body.username);
+    console.log(req.body.password);
+    
+    const userData = await Users.findOne({ where: { username: req.body.username } });
+
+    console.log("These are the database values");
+    console.log(userData.username);
+    console.log(userData.password);
+
+    if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
-  
-    const validPassword = await dbUserData.checkPassword(req.body.password);
-  
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    console.log("Do the passwords match?")
+    console.log(validPassword);
+
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect username or password. Please try again!' });
       return;
     }
-  
+
     req.session.save(() => {
+      req.session.user = userData.username;
       req.session.loggedIn = true;
-      req.session.user = dbUserData.username;
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
@@ -63,15 +70,16 @@ router.post('/login', async (req, res) => {
   }
 });
   
-  // Logout
+// Logout
+// URL looks like this localhost:3001/api/users/logout
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    } else {
-      res.status(404).end();
-    }
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;

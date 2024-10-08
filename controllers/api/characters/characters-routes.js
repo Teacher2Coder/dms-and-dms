@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Characters } = require('../../../models/');
+const Characters = require('../../../models/Characters');
 
 // URL looks like this: localhost.3001/api/characters
 router.post('/', async (req, res) => {
