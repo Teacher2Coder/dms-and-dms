@@ -15,11 +15,17 @@ Characters.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        author: {
+            type
+        },
+        description: {
+
+        },
         skills: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        names: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },

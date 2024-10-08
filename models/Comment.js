@@ -9,11 +9,11 @@ Comment.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         author: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         content: {
             type: DataTypes.TEXT,
@@ -21,11 +21,11 @@ Comment.init(
         },
         for: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         category_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
         }
     },
     {
