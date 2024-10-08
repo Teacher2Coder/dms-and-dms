@@ -19,7 +19,7 @@
         <h4>{{userDataPlain.username}}'s Quests</h4>
         {{#each questDataPlain as |quest|}}
         <div class="card" style="padding: 15px;">
-            <a href="/characters/{{quest.id}}" style="text-decoration: none;">
+            <a href="/quests/{{quest.id}}" style="text-decoration: none;">
                 <h5 style="color: red;">{{quest.name}}</h5>
                 <p style="color: black;">{{quest.description}}</p>
             </a>
@@ -30,7 +30,7 @@
         <h4>{{userDataPlain.username}}'s Stories</h4>
         {{#each storyDataPlain as |story|}}
         <div class="card" style="padding: 15px;">
-            <a href="/characters/{{story.id}}" style="text-decoration: none;">
+            <a href="/stories/{{story.id}}" style="text-decoration: none;">
                 <h5 style="color: red;">{{story.name}}</h5>
                 <p style="color: black;">{{story.description}}</p>
             </a>
@@ -41,7 +41,7 @@
         <h4>{{userDataPlain.username}}'s Rules</h4>
         {{#each ruleDataPlain as |rule|}}
         <div class="card" style="padding: 15px;">
-            <a href="/characters/{{rule.id}}" style="text-decoration: none;">
+            <a href="/rules/{{rule.id}}" style="text-decoration: none;">
                 <h5 style="color: red;">{{rule.category}}</h5>
                 <p style="color: black;">{{rule.description}}</p>
             </a>
