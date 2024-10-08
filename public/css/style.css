@@ -69,6 +69,14 @@
     width: 30%;
     margin: 0 auto;
 }
+
+
+.character-card {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 body {
     display: flex;
     justify-content: center;
