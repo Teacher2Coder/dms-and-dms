@@ -15,17 +15,22 @@ Stories.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        questGiver: {
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        main_villain: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Quest_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'objective',
-                key: 'id',
-            },
+        potential_factions: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
+        levels: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize,
