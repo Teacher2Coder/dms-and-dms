@@ -1,14 +1,17 @@
-#full-screen {
+body {
     min-height: 100vh;
+    min-width: 100%;
     margin: 0;
-    display: grid; grid-template-rows: auto 1fr auto;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    display: grid; grid-template-columns: auto 1fr auto;
     top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
-    background-image: url(/images/logo.png)
+    right: 0;
+    background: url(/images/logo.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .nav-links {
@@ -26,11 +29,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .option-card {
     width: 45%;
     margin: 2%;
+    padding: 10px;
     text-align: center;
 }
 
@@ -75,14 +80,6 @@
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
 }
 
 .dice {

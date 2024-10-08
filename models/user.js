@@ -1,54 +1,48 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-// Create the User schema
-const userSchema = new Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        match: [/.+@.+\..+/, 'Please fill a valid email address'], // Valid email format
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    profilePicture: {
-        type: String,
-        default: 'default_profile_pic.png', // Default profile picture
-    },
-    bio: {
-        type: String,
-        maxlength: 280, // Limit bio to 280 characters
-    },
-    thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Thought', // Reference to the Thought model
+class User extends Model { }
+
+User.init(
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
         },
-    ],
-    friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User', // Reference to the User model (self-reference)
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
         },
-    ],
-}, {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
-});
-
-// Create a virtual property for friend count
-userSchema.virtual('friendCount').get(function () {
-    return this.friends.length;
-});
-
-// Create the User model
-const User = mongoose.model('User', userSchema);
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+        },
+        password: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        bio: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+    },
+    {
+        hooks: {
+            async beforeCreate(newUserData) {
+              newUserData.password = await bcrypt.hash(newUserData.password, 10);
+              return newUserData;
+            },
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'users',
+    }
+);
 
 module.exports = User;
