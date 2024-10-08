@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Quest extends Model { }
 
-Objective.init(
+Quest.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,13 +11,17 @@ Objective.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        type: {
-            type: DataTypes.STRING,
+        description: {
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         quest_giver: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         rewards: {
             type: DataTypes.STRING,

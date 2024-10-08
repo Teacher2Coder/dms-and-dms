@@ -2,8 +2,7 @@ const Characters = require ('./Characters');
 const Rules = require ('./Rules');
 const Stories = require ('./Stories');
 const Quests = require ('./Quest');
-const Class = require ('./Class');
-const User = require('./user');
+const User = require('./User');
 const Comments = require('./Comment')
 
 
@@ -27,4 +26,4 @@ const Comments = require('./Comment')
 //     onDelete: 'CASCADE',
 // })
 
-module.exports = {Characters, Rules, Stories, Quests, Class, User, Comments};
+module.exports = {Characters, Rules, Stories, Quests, User, Comments};
