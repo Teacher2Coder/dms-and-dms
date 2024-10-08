@@ -1,11 +1,17 @@
 const router = require('express').Router();
 
 const homeRoutes = require('./homeRoutes');
-// const characterRoutes = require('./characterRoutes'); UNCOMMENT when ready!
+const characterRoutes = require('./characterRoutes');
+const storiesRoutes = require('./storiesRoutes');
+const questRoutes = require('./questRoutes');
+const rulesRoutes = require('./rulesRoutes');
 const apiRoutes = require('./api');
 
 router.use('/', homeRoutes);
-// router.use('/characters', characterRoutes); UNCOMMENT when ready!
+router.use('/characters', characterRoutes);
+router.use('/stories', storiesRoutes);
+router.use('/quests', questRoutes);
+router.use('/rules', rulesRoutes);
 router.use('/api', apiRoutes);
 
 router.get('/about', async (req, res) => {
