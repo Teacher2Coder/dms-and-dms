@@ -16,7 +16,7 @@ router.use('/api', apiRoutes);
 
 router.get('/about', async (req, res) => {
     try {
-        res.render('about')
+        res.render('about', { loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -25,7 +25,7 @@ router.get('/about', async (req, res) => {
 
 router.get('/contact', async (req, res) => {
     try {
-        res.render('contact')
+        res.render('contact', { loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -33,7 +33,7 @@ router.get('/contact', async (req, res) => {
 });
 router.get('/dice', async (req, res) => {
     try {
-        res.render('dice')
+        res.render('dice', { loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

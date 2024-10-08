@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
         const storiesDataPlain = storiesData.map((story) => story.get({ plain: true }));
         
-        res.render('stories', { storiesDataPlain })
+        res.render('stories', { storiesDataPlain, loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 
         const story = singleStoryData.get({ plain: true });
         
-        res.render('single-story', { story })
+        res.render('single-story', { story, loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

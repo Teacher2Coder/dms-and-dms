@@ -51,7 +51,8 @@ router.get('/', async (req, res) => {
       firstCharacter, secondCharacter, thirdCharacter,
       firstQuest, secondQuest, thirdQuest,
       firstStory, secondStory, thirdStory,
-      firstRule, secondRule, thirdRule
+      firstRule, secondRule, thirdRule,
+      loggedIn: req.session.loggedIn
      })
   } catch (err) {
     console.error(err);
@@ -63,7 +64,7 @@ router.get('/', async (req, res) => {
 
 // URL looks like this: localhost.3001/login
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
@@ -72,7 +73,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }

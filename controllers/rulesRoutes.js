@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
         const rulesDataPlain = rulesData.map((rules) => rules.get({ plain: true }));
         
-        res.render('rules', { rulesDataPlain })
+        res.render('rules', { rulesDataPlain, loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 
         const rule = singleRuleData.get({ plain: true });
         
-        res.render('single-rule', { rule })
+        res.render('single-rule', { rule, loggedIn: req.session.loggedIn })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
