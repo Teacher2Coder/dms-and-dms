@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
         const characterDataPlain = characterData.map((characters) => characters.get({ plain: true }));
         
-        res.render('characters', { characterDataPlain, loggedIn: req.session.loggedIn })
+        res.render('characters', { characterDataPlain, loggedIn: req.session.loggedIn, user: req.session.user })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 
         const character = singleCharacterData.get({ plain: true });
         
-        res.render('single-character', { character, loggedIn: req.session.loggedIn });
+        res.render('single-character', { character, loggedIn: req.session.loggedIn, user: req.session.user });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

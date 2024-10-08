@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const homeRoutes = require('./homeRoutes');
+const userRoutes = require('./userRoutes');
 const characterRoutes = require('./characterRoutes');
 const storiesRoutes = require('./storiesRoutes');
 const questRoutes = require('./questRoutes');
@@ -8,6 +9,7 @@ const rulesRoutes = require('./rulesRoutes');
 const apiRoutes = require('./api');
 
 router.use('/', homeRoutes);
+router.use('/users', userRoutes);
 router.use('/characters', characterRoutes);
 router.use('/stories', storiesRoutes);
 router.use('/quests', questRoutes);
@@ -16,7 +18,7 @@ router.use('/api', apiRoutes);
 
 router.get('/about', async (req, res) => {
     try {
-        res.render('about', { loggedIn: req.session.loggedIn })
+        res.render('about', { loggedIn: req.session.loggedIn, user: req.session.user })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -25,7 +27,7 @@ router.get('/about', async (req, res) => {
 
 router.get('/contact', async (req, res) => {
     try {
-        res.render('contact', { loggedIn: req.session.loggedIn })
+        res.render('contact', { loggedIn: req.session.loggedIn, user: req.session.user })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -33,7 +35,7 @@ router.get('/contact', async (req, res) => {
 });
 router.get('/dice', async (req, res) => {
     try {
-        res.render('dice', { loggedIn: req.session.loggedIn })
+        res.render('dice', { loggedIn: req.session.loggedIn, user: req.session.user })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

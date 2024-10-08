@@ -10,7 +10,7 @@
         <li class="nav-link"><a href="/login" class="btn btn-danger">Login</a></li>
         {{/unless}}
         {{#if loggedIn}}
-        <li class="nav-link"><a href="/" class="btn btn-danger">My Profile</a></li>
+        <li class="nav-link"><a href="/users/{{user}}" class="btn btn-danger">My Profile</a></li>
         <li class="nav-link"><a href="/" class="btn btn-danger" id="logout">Logout</a></li>
         {{/if}}
     </ul>

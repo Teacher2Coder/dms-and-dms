@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
         const questDataPlain = questData.map((quest) => quest.get({ plain: true }));
         
-        res.render('quests', { questDataPlain, loggedIn: req.session.loggedIn })
+        res.render('quests', { questDataPlain, loggedIn: req.session.loggedIn, user: req.session.user })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
 
         const quest = singleQuestData.get({ plain: true });
         
-        res.render('single-quest', { quest, loggedIn: req.session.loggedIn })
+        res.render('single-quest', { quest, loggedIn: req.session.loggedIn, user: req.session.user })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
