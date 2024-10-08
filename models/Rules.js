@@ -15,6 +15,10 @@ Rules.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize,
