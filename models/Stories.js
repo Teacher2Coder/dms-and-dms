@@ -11,6 +11,10 @@ Stories.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         author: {
             type: DataTypes.STRING,
             allowNull: false,
