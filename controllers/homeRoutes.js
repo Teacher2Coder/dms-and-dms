@@ -11,14 +11,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// router.get('/characters/', withAuth, async (req, res) => {
-//   try {
-//   res.render('characterpage')
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
+
 
 
 
