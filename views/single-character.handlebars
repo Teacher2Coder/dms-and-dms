@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+   
+
+    <main>
+        <div>
+            <section>
+                <h2>
+                    Recent Character Submissions
+                </h2>
+            </section>
+
+            {{#each character as |Characters|}}
+            <section>
+              
+              <h3>
+                {{Characters.name}}
+                <p>Race: {{Characters.race}}</p>
+              </h3>
+              <p>
+                Created by: {{Characters.author}}
+              </p>
+
+              <p>
+                Description: {{Characters.description}}
+              </p>
+              <ul>
+                <li>{{Characters.strength}}</li>
+                <li>{{Characters.dexterity}}</li>
+                <li>{{Characters.constitution}}</li>
+                <li>{{Characters.intelligence}}</li>
+                <li>{{Characters.wisdom}}</li>
+                <li>{{Characters.charisma}}</li>
+              </ul>
+
+               <p>
+                Class: {{Characters.class}}
+              </p>
+
+              <P>
+                Skills: {{Characters.skills}}
+              </P>
+
+              <P></P>
+                Alignment: {{Characters.alignment}}
+              </P>
+
+            </section>
+            {{/each}}
+
+          
+
+    
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</body>
+</html>
