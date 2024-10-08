@@ -1,5 +1,6 @@
 [
     {
+        "name": "Doing Hood Rat Stuff",
         "author": "ethan",
         "world": "Fantasy Land",
         "description": "You go and do hood rat stuff with your friends",
@@ -8,6 +9,7 @@
         "levels": "recommended to be at least level 1"
     },
     {
+        "name": "Climbing Mountains and Stuff",
         "author": "nick",
         "world": "Mystic Mountains",
         "description": "You go and climb mountains with your friends",
@@ -16,6 +18,7 @@
         "levels": "recommended to be at least level 2"
     },
     {
+        "name": "Exploring the Enchanted Forrest",
         "author": "bridgett",
         "world": "Enchanted Forest",
         "description": "You go and explore the forrest with your friends",
@@ -24,6 +27,7 @@
         "levels": "recommended to be at least level 3"
     },
     {
+        "name": "The Dungeon Crawl",
         "author": "jocelyn",
         "world": "Dark Dungeon",
         "description": "You go and do hood rat stuff with your friends, but in a dungeon this time",
@@ -32,6 +36,7 @@
         "levels": "recommended to be at least level 4"
     },
     {
+        "name": "The Lost City",
         "author": "noah",
         "world": "Lost City",
         "description": "You are trying to find this city that got lost.",

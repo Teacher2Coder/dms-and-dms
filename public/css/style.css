@@ -69,3 +69,46 @@
     width: 30%;
     margin: 0 auto;
 }
+
+
+.character-card {
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.dice {
+    padding: 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    background-color: transparent; /* Set background to transparent */
+    cursor: pointer;
+    transition: transform 0.5s; /* Smooth transition for transform */
+}
+
+.dice img {
+    width: 100px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Animation for spinning */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dice:hover {
+    animation: spin .5s linear infinite; /* Spin continuously while hovering */
+}

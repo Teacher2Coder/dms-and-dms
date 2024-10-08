@@ -4,7 +4,7 @@ const Characters = require('../models/Characters');
 const Quests = require('../models/Quest');
 const Stories = require('../models/Stories');
 const Rules = require('../models/Rules');
-const User = require('../models/user')
+const User = require('../models/user');
 
 // Import json data here
 // Uncomment the models when they are finshed and ready to go!

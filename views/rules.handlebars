@@ -1,0 +1,11 @@
+{{#each rulesDataPlain as |rule|}}
+<a href="/quests/{{rule.id}}" style="text-decoration: none;">
+    <div class="card character-card">             
+        <div style="display: flex; flex-direction: row; justify-content: space-around">
+            <h3>{{rule.category}}</h3>
+            <h3>Created by: {{rule.author}}</h3>
+        </div>
+        <p>{{rule.description}}</p>
+    </div>
+</a>
+{{/each}}

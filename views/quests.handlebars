@@ -1,0 +1,11 @@
+{{#each questDataPlain as |quest|}}
+<a href="/quests/{{quest.id}}" style="text-decoration: none;">
+    <div class="card character-card">             
+        <div style="display: flex; flex-direction: row; justify-content: space-around">
+            <h3>{{quest.name}}</h3>
+            <h3>Created by: {{quest.author}}</h3>
+        </div>
+        <p>{{quest.description}}</p>
+    </div>
+</a>
+{{/each}}

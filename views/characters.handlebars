@@ -1,43 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-</head>
-<body>
-
-
-    <main>
-        <div>
-            <section>
-                <h2>
-                    Recent Character Submissions
-                </h2>
-            </section>
-
-            {{#each characterData as |Characters|}}
-            <section>
-              
-              <h3>
-                {{Characters.name}}
-              </h3>
-              <p>
-                {{Characters.description}}
-              </p>
-
-            </section>
-            {{/each}}
-
-          
-
-    
+{{#each characterDataPlain as |Characters|}}
+<a href="/characters/{{Characters.id}}" style="text-decoration: none;">
+    <div class="card character-card">             
+        <div style="display: flex; flex-direction: row; justify-content: space-around">
+            <h3>{{Characters.name}}</h3>
+            <h3>Created by: {{Characters.author}}</h3>
         </div>
-        
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Your Company</p>
-    </footer>
-</body>
-</html>
+        <p>{{Characters.description}}</p>
+    </div>
+</a>
+{{/each}}
