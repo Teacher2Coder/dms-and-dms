@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../../models/user');
+const { User } = require('../../../models/User');
 // Import User model
 
 // URL looks like this: localhost.3001/api/users

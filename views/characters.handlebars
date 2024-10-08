@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    {{> header}} <!-- Include the header partial -->
+
+    <main>
+        <div>
+            <section>
+                <h2>
+                    Recent Character Submissions
+                </h2>
+            </section>
+
+            {{#each characterData as |Characters|}}
+            <section>
+              
+              <h3>
+                {{Characters.name}}
+              </h3>
+              <p>
+                {{Characters.description}}
+              </p>
+
+            </section>
+            {{/each}}
+
+          
+
+    
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+</body>
+</html>

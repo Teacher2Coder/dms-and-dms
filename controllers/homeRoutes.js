@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../models/user');
+const User = require('../models/User');
 const withAuth = require('../utils/auth');
 
 
@@ -11,7 +11,9 @@ router.get('/', async (req, res) => {
     console.error(err);
     res.status(500).json(err);
   }
-})
+});
+
+
 
 // URL looks like this: localhost.3001/login
 router.get('/login', (req, res) => {
