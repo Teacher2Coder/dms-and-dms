@@ -12,12 +12,25 @@
         <div>
             <section>
                 <h2>
-                    Recent Submissions
+                    Recent Character Submissions
                 </h2>
-                <p>
-                    placeholder 
-                </p>
             </section>
+
+            {{#each characterData as |Characters|}}
+            <section>
+              
+              <h3>
+                {{Characters.name}}
+              </h3>
+              <p>
+                {{Characters.description}}
+              </p>
+
+            </section>
+            {{/each}}
+
+          
+
     
         </div>
         
