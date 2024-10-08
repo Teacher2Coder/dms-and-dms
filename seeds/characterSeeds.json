@@ -1,29 +1,41 @@
 [    
     {
         "name": "Shammy",
+        "author": "",
         "class": "Cleric/Sorcerer",
         "skills": "Charlatan",
         "alignment": "Chaotic good", 
         "strength": "8",
-        "intelligence": "12"
-        
+        "dexterity": "12",
+        "constitution": "",
+        "intelligence": "",
+        "wisdom": "",
+        "charisma": ""
     },
     {
         "name": "Nurbit",
+        "author": "",
         "class": "Bard",
         "skills": "Musician",
-        "alignment": "Chaotic good",
+        "alignment": "Chaotic Good",
         "strength": "8",
-        "intelligence": "14"
-    
+        "dexterity": "12",
+        "constitution": "",
+        "intelligence": "",
+        "wisdom": "",
+        "charisma": ""
     },
     {
         "name": "Barrork",
+        "author": "",
         "class": "Paladin/Cleric",
         "skills": "Swordsman",
         "alignment": "Lawful Good",
         "strength": "15",
-        "intelligence": "8"
-       
+        "dexterity": "12",
+        "constitution": "",
+        "intelligence": "",
+        "wisdom": "",
+        "charisma": ""
        }
 ]

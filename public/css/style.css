@@ -4,10 +4,68 @@
     display: grid; grid-template-rows: auto 1fr auto;
     background-repeat: no-repeat;
     background-size: 100%;
-    position:fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-image: url(/images/logo.png)
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-link {
+    margin: 10px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.option-card {
+    width: 45%;
+    margin: 2%;
+    text-align: center;
+}
+
+.about {
+    padding: 5px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.developer {
+    padding: 10px;
+}
+
+.login-card {
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-input {
+    display: flex;
+    justify-content: space-around;
+}
+
+.field {
+    width: 50%;
+    text-align: center;
+    margin: 10px;
+}
+
+#register-btn {
+    width: 30%;
+    margin: 0 auto;
 }
