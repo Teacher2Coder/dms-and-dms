@@ -1,8 +1,10 @@
+// Find the current bio and set the edit bio textbox to = that
 const currentBio =  document.querySelector('#current-bio').textContent;
 const editedBio = document.querySelector('#new-bio');
-const user = document.querySelector('#user').dataset.user;
-
 editedBio.value = currentBio;
+
+// Find the current user that will be editted
+const user = document.querySelector('#user').dataset.user;
 
 const handleEditBio = async (event) => {
     event.preventDefault();

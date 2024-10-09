@@ -2,6 +2,7 @@
     <h2 id="user" style="text-align: center;" data-user="{{userDataPlain.username}}">Dungeon Master: {{userDataPlain.username}}</h2>
     <h4 style="text-align: center; margin-top: 40px;">Dungeon Master Bio:</h4>
     <p id="current-bio">{{userDataPlain.bio}}</p>
+    {{!-- If the user is visiting their own profile, this button is rendered --}}
     {{#if canEdit}}
     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-bio" style="width: 25%; margin: 0 auto;">Edit your bio</button>
     {{/if}}
@@ -9,6 +10,7 @@
 <div style="display: flex; flex-direction: rows; flex-wrap: wrap; justify-content: center;">
     <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
         <h4>{{userDataPlain.username}}'s Characters</h4 >
+        {{!-- For every character this user has created, render these elements --}}
         {{#each characterDataPlain as |character|}}
         <div class="card" style="padding: 15px;">
             <a href="/characters/{{character.id}}" style="text-decoration: none;">
@@ -20,6 +22,7 @@
     </div>
     <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
         <h4>{{userDataPlain.username}}'s Quests</h4>
+        {{!-- For every quest this user has created, render these elements --}}
         {{#each questDataPlain as |quest|}}
         <div class="card" style="padding: 15px;">
             <a href="/quests/{{quest.id}}" style="text-decoration: none;">
@@ -31,6 +34,7 @@
     </div>
     <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
         <h4>{{userDataPlain.username}}'s Stories</h4>
+        {{!-- For every story this user has created, render these elements --}}
         {{#each storyDataPlain as |story|}}
         <div class="card" style="padding: 15px;">
             <a href="/stories/{{story.id}}" style="text-decoration: none;">
@@ -42,6 +46,7 @@
     </div>
     <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
         <h4>{{userDataPlain.username}}'s Rules</h4>
+        {{!-- For every rule this user has created, render these elements --}}
         {{#each ruleDataPlain as |rule|}}
         <div class="card" style="padding: 15px;">
             <a href="/rules/{{rule.id}}" style="text-decoration: none;">
@@ -53,7 +58,7 @@
     </div>
 </div>
 
-{{!-- Add modal for editting bio here --}}
+{{!-- If the user is visiting their own profile, this modal is added --}}
 {{#if canEdit}}
 <div class="modal fade" id="edit-bio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
