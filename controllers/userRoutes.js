@@ -19,6 +19,8 @@ router.get('/:username', async (req, res) => {
         const questDataPlain = questData.map((characters) => characters.get({ plain: true }));
         const storyDataPlain = storyData.map((characters) => characters.get({ plain: true }));
         const ruleDataPlain = ruleData.map((characters) => characters.get({ plain: true }));
+
+        const canEdit = req.params.username == req.session.user;
         
         res.render('user-profile', { 
             userDataPlain,
@@ -27,7 +29,8 @@ router.get('/:username', async (req, res) => {
             storyDataPlain, 
             ruleDataPlain, 
             loggedIn: req.session.loggedIn, 
-            user: req.session.user 
+            user: req.session.user,
+            canEdit
         })
 
     } catch (err) {
