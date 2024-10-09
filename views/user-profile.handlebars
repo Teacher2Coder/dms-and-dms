@@ -1,7 +1,10 @@
-<div class="card" style="padding: 20px;">
-    <h2 style="text-align: center;">User: {{userDataPlain.username}}</h2>
-    <h4 style="text-align: center; margin-top: 40px;">User Bio:</h4>
-    <p>{{userDataPlain.bio}}</p>
+<div class="card" style="padding: 20px; text-align: center;">
+    <h2 id="user" style="text-align: center;" data-user="{{userDataPlain.username}}">Dungeon Master: {{userDataPlain.username}}</h2>
+    <h4 style="text-align: center; margin-top: 40px;">Dungeon Master Bio:</h4>
+    <p id="current-bio">{{userDataPlain.bio}}</p>
+    {{#if canEdit}}
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-bio" style="width: 25%; margin: 0 auto;">Edit your bio</button>
+    {{/if}}
 </div>
 <div style="display: flex; flex-direction: rows; flex-wrap: wrap; justify-content: center;">
     <div class="card" style="width: 45%; padding: 2%; margin: 2%; text-align: center;">
@@ -49,3 +52,26 @@
         {{/each}}
     </div>
 </div>
+
+{{!-- Add modal for editting bio here --}}
+{{#if canEdit}}
+<div class="modal fade" id="edit-bio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> Edit your bio </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <textarea id="new-bio" style="min-width: 100%; max-width: 100%; margin: 0 auto;"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="save-bio">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/edit-bio.js"></script>
+{{/if}}

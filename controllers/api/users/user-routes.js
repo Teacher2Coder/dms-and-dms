@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Users = require('../../../models/User');
 
-// URL looks like this: localhost.3001/api/users
+// URL looks like this -- localhost:3001/api/users
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await Users.create({
@@ -24,18 +24,10 @@ router.post('/', async (req, res) => {
 });
 
 // Login
-// URL looks like localhost:3001/api/users/login
+// URL looks like this -- localhost:3001/api/users/login
 router.post('/login', async (req, res) => {
   try {
-    console.log("These are the inputed values");
-    console.log(req.body.username);
-    console.log(req.body.password);
-    
     const userData = await Users.findOne({ where: { username: req.body.username } });
-
-    console.log("These are the database values");
-    console.log(userData.username);
-    console.log(userData.password);
 
     if (!userData) {
       res
@@ -71,7 +63,7 @@ router.post('/login', async (req, res) => {
 });
   
 // Logout
-// URL looks like this localhost:3001/api/users/logout
+// URL looks like this -- localhost:3001/api/users/logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -81,5 +73,27 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+// Edit user bio
+// URL looks like this -- localhost:3001/api/users/username
+router.put('/:username', async (req, res) => {
+  try {
+    console.log(req.body.newBio)
+
+    const updatedUser = Users.update({
+      bio: req.body.newBio
+    },
+    {
+      where: { username: req.params.username }
+    });
+
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;
