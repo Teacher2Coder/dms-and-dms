@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const { Characters } = require('../../../models/');
+const Characters = require('../../../models/Characters');
 
 // URL looks like this: localhost.3001/api/characters
 router.post('/', async (req, res) => {
     try {
+        // Create a new character with the data from the req.body
         const characterData = await Characters.create({
             class: req.body.class,
             skills: req.body.skills,

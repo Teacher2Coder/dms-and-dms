@@ -2,30 +2,43 @@ const router = require('express').Router();
 const Character = require('../models/Characters');
 const withAuth = require('../utils/auth');
 
-// URL looks like this: localhost.3001/characters
+// URL looks like this: localhost:3001/characters
 router.get('/', async (req, res) => {
     try {
+        
+        // Get all the characters from all users in reverse order
         const characterData = await Character.findAll({
             order: [['id', 'DESC']]
         });
-
+        
+        // Make the data plain
         const characterDataPlain = characterData.map((characters) => characters.get({ plain: true }));
         
-        res.render('characters', { characterDataPlain })
+        // Render characters.handlebars and pass in these variables
+        res.render('characters', { 
+            characterDataPlain, 
+            loggedIn: req.session.loggedIn, 
+            user: req.session.user 
+        })
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
     }
 });
 
-// URL looks like this: localhost.3001/characters/1
+
+// URL looks like this: localhost:3001/characters/1
 router.get('/:id', async (req, res) => {
     try {
+        
+        // Find the single character data
         const singleCharacterData = await Character.findByPk(req.params.id);
-
+        
+        // Make the data plain
         const character = singleCharacterData.get({ plain: true });
         
-        res.render('single-character', { character });
+        // Render single-character.handlebars and pass in these variables
+        res.render('single-character', { character, loggedIn: req.session.loggedIn, user: req.session.user });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

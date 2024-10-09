@@ -64,13 +64,13 @@ Characters.init(
             allowNull: false,
         },
     },
-        {
-            sequelize,
-            timestamps: false,
-            freezeTableName: true,
-            underscored: true,
-            modelName: 'characters',
-          }
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'characters',
+    }
 );
 
 module.exports = Characters

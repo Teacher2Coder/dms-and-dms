@@ -3,3 +3,7 @@
     <h3>Made by: Bridgett Rice, Jocelyn Del Castillo, Joseph Ruiz, Nick Ramos, Noah McKinzie, and Ethan Owens</h3>
     <h3>Built with: Express Handlebars, bcrypt, pg, Sequelize and Mongoose!</h3>
 </div>
+{{!-- Add the logout script to the page if the user is logged in --}}
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}

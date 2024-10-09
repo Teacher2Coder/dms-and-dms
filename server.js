@@ -1,3 +1,4 @@
+// Import packages
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -7,6 +8,7 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Call express and define the port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -26,6 +28,7 @@ const sess = {
     }),
 };
 
+// Tell the server to use express-session
 app.use(session(sess));
 
 // Middleware

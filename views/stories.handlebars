@@ -1,9 +1,12 @@
+{{!-- For every stories in the database, create these elements --}}
 {{#each storiesDataPlain as |story|}}
 <a href="/quests/{{story.id}}" style="text-decoration: none;">
     <div class="card character-card">             
         <div style="display: flex; flex-direction: row; justify-content: space-around">
-            <h3>{{story.name}}</h3>
-            <h3>Created by: {{story.author}}</h3>
+            <h3 style="color: red;">{{story.name}}</h3>
+            <a href="/users/{{story.author}}" style="text-decoration: none; color: red;">
+                <h3>Created by: {{story.author}}</h3>
+            </a>
         </div>
         <p>{{story.description}}</p>
     </div>

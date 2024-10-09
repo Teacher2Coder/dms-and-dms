@@ -1,6 +1,8 @@
+// Import the packages
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
+// Start serquelize session and pass in values from .env file
 const sequelize = process.env.DB_URL
   ? new Sequelize(process.env.DB_URL)
   : new Sequelize(

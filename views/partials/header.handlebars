@@ -1,10 +1,19 @@
 {{!-- partials/header.handlebars --}}
 <nav>
-    <h1 style="text-align: center; padding-top: 30px;">Welcome to DMs & DMs!</h1>
+    <h1 style="text-align: center; padding-top: 30px; color: red;">Welcome to DMs & DMs!</h1>
     <ul class="nav-links">
         <li class="nav-link"><a href="/" class="btn btn-danger">Home</a></li>
         <li class="nav-link"><a href="/about" class="btn btn-danger">About</a></li>
         <li class="nav-link"><a href="/contact" class="btn btn-danger">Contact</a></li>
+        <li class="nav-link"><a href="/dice" class="btn btn-danger">Dice Roller</a></li>
+        {{!-- If user is not logged in, a login button is rendered --}}
+        {{#unless loggedIn}}
         <li class="nav-link"><a href="/login" class="btn btn-danger">Login</a></li>
+        {{/unless}}
+        {{!-- If the user is logged in, a profile page and a logout button are rendered --}}
+        {{#if loggedIn}}
+        <li class="nav-link"><a href="/users/{{user}}" class="btn btn-danger">My Profile</a></li>
+        <li class="nav-link"><a href="/" class="btn btn-danger" id="logout">Logout</a></li>
+        {{/if}}
     </ul>
 </nav>

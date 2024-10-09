@@ -1,9 +1,12 @@
+{{!-- For every quest in the database, create these elements --}}
 {{#each questDataPlain as |quest|}}
 <a href="/quests/{{quest.id}}" style="text-decoration: none;">
     <div class="card character-card">             
         <div style="display: flex; flex-direction: row; justify-content: space-around">
-            <h3>{{quest.name}}</h3>
-            <h3>Created by: {{quest.author}}</h3>
+            <h3 style="color: red;">{{quest.name}}</h3>
+            <a href="/users/{{quest.author}}" style="text-decoration: none; color: red;">
+                <h3>Created by: {{quest.author}}</h3>
+            </a>
         </div>
         <p>{{quest.description}}</p>
     </div>
