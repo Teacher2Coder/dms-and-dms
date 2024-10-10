@@ -1,0 +1,93 @@
+<div class="modal fade" id="edit-character" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> Create a new Character! </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <lable class="form-label">Character Name</lable>
+                <input class="form-control" type="text" id="name-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Character Description</lable>
+                <textarea class="form-control" id="description-input"></textarea>
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Class</lable>
+                <select class="form-select" aria-label="Class Dropdown" id="class-input">
+                    <option selected>Choose a class</option>
+                    <option value="Barbarian">Barbarian</option>
+                    <option value="Bard">Bard</option>
+                    <option value="Cleric">Cleric</option>
+                    <option value="Druid">Druid</option>
+                    <option value="Fighter">Fighter</option>
+                    <option value="Monk">Monk</option>
+                    <option value="Paladin">Paladin</option>
+                    <option value="Ranger">Ranger</option>
+                    <option value="Rogue">Rogue</option>
+                    <option value="Sorcerer">Sorcerer</option>
+                    <option value="Warlock">Warlock</option>
+                    <option value="Wizard">Wizard</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Skills</lable>
+                <input class="form-control" type="text" id="skill-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Race</lable>
+                <input class="form-control" type="text" id="race-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Alignment</lable>
+                <select class="form-select" aria-label="Class Dropdown" id="alignment-input">
+                    <option selected>Choose an Alignment</option>
+                    <option value="Lawful Good">Lawful Good</option>
+                    <option value="Lawful Neutral">Lawful Neutral</option>
+                    <option value="Lawful Evil">Lawful Evil</option>
+                    <option value="Neutral Good">Neutral Good</option>
+                    <option value="True Neutral">True Neutral</option>
+                    <option value="Neutral Evil">Neutral Evil</option>
+                    <option value="Chaotic Good">Chaotic Good</option>
+                    <option value="Chaotic Neutral">Chaotic Neutral</option>
+                    <option value="Chaotic Evil">Chaotic Evil</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Strength</lable>
+                <input class="form-control" type="number" id="strength-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Dexterity</lable>
+                <input class="form-control" type="number" id="dexterity-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Constitution</lable>
+                <input class="form-control" type="number" id="constitution-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Intellegence</lable>
+                <input class="form-control" type="number" id="intellegence-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Wisdom</lable>
+                <input class="form-control" type="number" id="wisdom-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Charisma</lable>
+                <input class="form-control" type="number" id="charisma-input">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="submit-edits">Edit Character!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/edit-character.js"></script>

@@ -1,66 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{quest.name}} - Quest Details</title>
-    <link rel="stylesheet" href="/css/style.css"> 
-</head>
-<div id="hidden-content" data-for="quest" data-key="{{quest.id}}"></div>
+<div id="hidden-content" data-for="quests" data-key="{{quest.id}}"></div>
+
+{{#if canEdit}}
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-quest">Edit this Quest</button>
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Quest</button>
+{{/if}}
+
 <body>
     <header>
-        <h1>{{quest.name}}</h1>
+        <h1 id="name">{{quest.name}}</h1>
         <p>Created by: <a href="/users/{{quest.author}}" style="text-decoration: none;">{{quest.author}}</a></p>
     </header>
 <main>
     <section>
-            <h2>Description</h2>
-            <p>{{quest.description}}</p>
-        </section>
-        <section>
-            <h3>Quest Giver</h3>
-            <p>{{quest.quest_giver}}</p>
-        </section>
-        <section>
-            <h3>Quest Class</h3>
-            <p>{{quest.class}}</p>
-        </section>
-        <section>
-            <h3>Quest Skills</h3>
-            <p>{{quest.skills}}</p>
-        </section>
-        <section>
-            <h3>Quest Race</h3>
-            <p>{{quest.race}}</p>
-        </section>
-        <section>
-            <h3>Quest Alignment</h3>
-            <p>{{quest.alignment}}</p>
-        </section>
-        <section>
-            <h3>Quest Strength</h3>
-            <p>{{quest.strength}}</p>
-        </section>
-        <section>
-            <h3>Quest Dexterity</h3>
-            <p>{{quest.dexterity}}</p>
-        </section>
-        <section>
-            <h3>Quest Constitution</h3>
-            <p>{{quest.constitution}}</p>
-        </section>
-        <section>
-            <h3>Quest Intelligence</h3>
-            <p>{{quest.intelligence}}</p>
-        </section>
-        <section>
-            <h3>Quest Wisdom</h3>
-            <p>{{quest.wisdom}}</p>
-        </section>
-        <section>
-            <h3>Quest Charisma</h3>
-            <p>{{quest.charisma}}</p>
-        </section>
+        <h2>Description</h2>
+        <p id="description">{{quest.description}}</p>
+    </section>
+    <section>
+        <h3>Quest Giver</h3>
+        <p id="quest-giver">{{quest.quest_giver}}</p>
+    </section>
+    <section>
+        <h3>Quest Location</h3>
+        <p id="location">{{quest.location}}</p>
+    </section>
+    <section>
+        <h3>Rewards</h3>
+        <p id="rewards">{{quest.rewards}}</p>
+    </section>     
 </main>
     <section class="comment-section">
       <h3>Comments</h3>
@@ -70,4 +36,8 @@
 
 {{> comment-modal}}
 </body>
-</html>
+
+{{#if canEdit}}
+{{> edit-quest-modal}}
+{{> delete-modal}}
+{{/if}}
