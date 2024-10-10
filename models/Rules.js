@@ -15,7 +15,7 @@ Rules.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        category: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
