@@ -36,18 +36,22 @@ router.get('/:id', withAuth, async (req, res) => {
         const singleCharacterData = await Character.findByPk(req.params.id);
 
         // Find the comments on this particular character
-        const commentData = await Comments.findAll({ where: { for: 'character', category_id: req.params.id }})
+        const commentData = await Comments.findAll({ where: { for: 'characters', category_id: req.params.id }})
         
         // Make the data plain
         const character = singleCharacterData.get({ plain: true });
         const comments = commentData.map((comment) => comment.get({ plain: true }));
         
+        // Determine if the user can edit the character
+        const canEdit = req.session.user == character.author;
+
         // Render single-character.handlebars and pass in these variables
         res.render('single-character', { 
             character, 
             comments,
             loggedIn: req.session.loggedIn, 
-            user: req.session.user 
+            user: req.session.user,
+            canEdit 
         });
         
     } catch (err) {

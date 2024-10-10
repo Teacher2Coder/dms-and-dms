@@ -21,8 +21,34 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id')
+router.put('/:id', async (req, res) => {
+    try {
+        const storyData = await Stories.update({
+            name: req.body.nameInput,
+            description: req.body.descriptionInput,
+            world: req.body.worldInput,
+            main_villain: req.body.villainInput,
+            potential_factions: req.body.factionsInput,
+            levels: req.body.levelInput
+        },
+        {
+            where: { id: req.params.id }
+        });
+        res.status(200).json(storyData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+})
 
-router.delete('/:id')
+router.delete('/:id', async (req, res) => {
+    try {
+        const storyData = Stories.destroy({ where: { id: req.params.id } });
+        res.status(200).json(storyData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;

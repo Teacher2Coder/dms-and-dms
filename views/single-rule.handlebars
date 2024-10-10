@@ -1,4 +1,10 @@
-    <div id="hidden-content" data-for="rule" data-key="{{rule.id}}"></div>
+    <div id="hidden-content" data-for="rules" data-key="{{rule.id}}"></div>
+    
+{{#if canEdit}}
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-rule">Edit this Rule</button>
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Rule</button>
+{{/if}}
+    
     <main>
         <div>
             <section id="singleruleheader">
@@ -6,11 +12,11 @@
                     Rule Submission
                 </h2>
             </section id="singlerulesection">
-             <h3>{{rule.title}}</h3>
+             <h3 id="title">{{rule.title}}</h3>
              <p>{{rule.author}}</p>
 
              <h3>Description:</h3>
-             <p>{{rule.description}}</p>
+             <p id="description">{{rule.description}}</p>
             </section>
 
             <section class="comment-section">
@@ -19,9 +25,16 @@
                 {{> comments}}
             </section>
 
-{{> comment-modal}}
+
 
              
         </div>
         
     </main>
+
+{{> comment-modal}}
+
+{{#if canEdit}}
+{{> edit-rule-modal}}
+{{> delete-modal}}
+{{/if}}

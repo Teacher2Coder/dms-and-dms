@@ -34,18 +34,22 @@ router.get('/:id', withAuth, async (req, res) => {
         const singleRuleData = await Rules.findByPk(req.params.id);
 
         // Find the comments on this particular rule
-        const commentData = await Comments.findAll({ where: { for: 'rule', category_id: req.params.id }})
+        const commentData = await Comments.findAll({ where: { for: 'rules', category_id: req.params.id }})
 
         // Make the data plain
         const rule = singleRuleData.get({ plain: true });
         const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+        // Determine if the user can edit the rule
+        const canEdit = req.session.user == rule.author;
         
         // Render single-rule.handlebars and pass in these variables
         res.render('single-rule', { 
             rule,
             comments, 
             loggedIn: req.session.loggedIn, 
-            user: req.session.user 
+            user: req.session.user,
+            canEdit 
         });
 
     } catch (err) {

@@ -1,0 +1,44 @@
+<div class="modal fade" id="edit-story" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> Edit your Story! </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <lable class="form-label">Story Name</lable>
+                <input class="form-control" type="text" id="name-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">World</lable>
+                <input class="form-control" type="text" id="world-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Description</lable>
+                <textarea class="form-control" type="text" id="description-input"></textarea>
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Main Villain</lable>
+                <input class="form-control" type="text" id="villain-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Potential Factions</lable>
+                <input class="form-control" type="text" id="faction-input">
+            </div>
+            <div class="mb-3">
+                <lable class="form-label">Level recommended to start Story</lable>
+                <input class="form-control" type="text" id="levels-input">
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" id="submit-edits">Edit Story!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/edit-story.js"></script>

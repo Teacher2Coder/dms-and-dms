@@ -1,4 +1,4 @@
-    <div id="hidden-content" data-for="character" data-key="{{character.id}}"></div>
+    <div id="hidden-content" data-for="characters" data-key="{{character.id}}"></div>
     
     <main>
         <div>
@@ -7,43 +7,44 @@
                     Character Submission
                 </h2>
             </section>
-
+            {{#if canEdit}}
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-character">Edit this Character</button>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Character</button>
+            {{/if}}
             <section id="singlecharsec">
               
-              <h3>
-                {{character.name}}
-                <p id="race">Race: {{character.race}}</p>
-              </h3>
+              <h3 id="name">{{character.name}}</h3>
+              <p>Race: <div id="race">{{character.race}}</div></p>
             
 
               <h4>Ability Scores:</h4>
 
               <ul id="abilityscrlist">
-                <li>STR:{{character.strength}}</li>
-                <li>DEX:{{character.dexterity}}</li>
-                <li>CON:{{character.constitution}}</li>
-                <li>INT:{{character.intelligence}}</li>
-                <li>WIS:{{character.wisdom}}</li>
-                <li>CHA:{{character.charisma}}</li>
+                <li>STR:<div id="strength">{{character.strength}}</div></li>
+                <li>DEX:<div id="dexterity">{{character.dexterity}}</div></li>
+                <li>CON:<div id="constitution">{{character.constitution}}</div></li>
+                <li>INT:<div id="intelligence">{{character.intelligence}}</div></li>
+                <li>WIS:<div id="wisdom">{{character.wisdom}}</div></li>
+                <li>CHA:<div id="charisma">{{character.charisma}}</div></li>
               </ul>
 
               <p>
-                Description: {{character.description}}
+                Description: <div id="description">{{character.description}}</div>
               </p>
 
               
           
 
                <p>
-                Class: {{character.class}}
+                Class: <div id="class">{{character.class}}</div>
               </p>
 
               <P>
-                Skills: {{character.skills}}
+                Skills: <div id="skills">{{character.skills}}</div>
               </P>
 
               <P>
-                Alignment: {{character.alignment}}
+                Alignment: <div id="alignment">{{character.alignment}}</div>
               </P>
               <a href="/users/{{character.author}}" style="text-decoration: none; color: black;">
                 <p>
@@ -67,3 +68,8 @@
     </section>
 
 {{> comment-modal}}
+
+{{#if canEdit}}
+{{> edit-character-modal}}
+{{> delete-modal}}
+{{/if}}

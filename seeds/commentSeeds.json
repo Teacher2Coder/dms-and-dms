@@ -2,49 +2,49 @@
     {
         "author": "nick",
         "content": "This is a great idea",
-        "for": "character",
+        "for": "characters",
         "category_id": 1
     },
     {
         "author": "ethan",
         "content": "I like this idea!",
-        "for": "character",
+        "for": "characters",
         "category_id": 2
     },
     {
         "author": "nick",
         "content": "I might try this out next session!",
-        "for": "quest",
+        "for": "quests",
         "category_id": 1
     },
     {
         "author": "ethan",
         "content": "Wow! This is cool!",
-        "for": "quest",
+        "for": "quests",
         "category_id": 2
     },
     {
         "author": "nick",
         "content": "This is so well thought out!",
-        "for": "story",
+        "for": "stories",
         "category_id": 1
     },
     {
         "author": "ethan",
         "content": "I am amazed!",
-        "for": "story",
+        "for": "stories",
         "category_id": 2
     },
     {
         "author": "nick",
         "content": "I'm doing this from now on!",
-        "for": "rule",
+        "for": "rules",
         "category_id": 1
     },
     {
         "author": "ethan",
         "content": "I'm going to respectfully disagree here!",
-        "for": "rule",
+        "for": "rules",
         "category_id": 2
     }
 ]

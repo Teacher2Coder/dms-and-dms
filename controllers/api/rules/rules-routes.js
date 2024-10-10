@@ -17,8 +17,32 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id')
+router.put('/:id', async (req, res) => {
+    try {
+        const ruleData = await Rules.update({
+            title: req.body.titleInput,
+            description: req.body.descriptionInput
+        }, 
+        {
+            where: { id: req.params.id }
+        });
+        res.status(200).json(ruleData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+})
 
-router.delete('/:id')
+router.delete('/:id', async (req, res) => {
+    try {
+        const ruleData = await Rules.destroy({
+            where: { id: req.params.id }
+        })
+        res.status(200).json(ruleData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;

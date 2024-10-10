@@ -1,5 +1,11 @@
-  <div id="hidden-content" data-for="story" data-key="{{story.id}}"></div>
+  <div id="hidden-content" data-for="stories" data-key="{{story.id}}"></div>
   <main>
+
+{{#if canEdit}}
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-story">Edit this Story</button>
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Story</button>
+{{/if}}
+
         <div class="card">
             <section id="singlestoryheader">
                 <h2>
@@ -8,17 +14,17 @@
             </section >
 
             <section id="singlestorysection">
-                <h3>{{story.name}}</h3>
+                <h3 id="name">{{story.name}}</h3>
                 <p>By: {{story.author}}</p>
             </section>
 
             <section>
                 <h3>Story Components:</h3>
                 <ul>
-                    <li>World: {{story.world}}</li>
-                    <li>Main Villain: {{story.main_villain}}</li>
-                    <li>Potential Factions: {{story.potential_factions}}</li>
-                    <li>Recommended Levels: {{story.levels}}</li>
+                    <li>World: <div id="world">{{story.world}}</div></li>
+                    <li>Main Villain: <div id="villain">{{story.main_villain}}</div></li>
+                    <li>Potential Factions: <div id="factions">{{story.potential_factions}}</div></li>
+                    <li>Recommended Levels: <div id="levels">{{story.levels}}</div></li>
                 </ul>
             </section>
             
@@ -26,7 +32,7 @@
 
 
              <h3>Description:</h3>
-             <p>{{story.description}}</p>
+             <p id="description">{{story.description}}</p>
 
             </section>
 
@@ -42,3 +48,8 @@
         </div>
         
     </main>
+
+{{#if canEdit}}
+{{> edit-story-modal}}
+{{> delete-modal}}
+{{/if}}

@@ -34,18 +34,22 @@ router.get('/:id', withAuth, async (req, res) => {
         const singleStoryData = await Story.findByPk(req.params.id);
 
         // Find the comments on this particular story
-        const commentData = await Comments.findAll({ where: { for: 'story', category_id: req.params.id }})
+        const commentData = await Comments.findAll({ where: { for: 'stories', category_id: req.params.id }})
 
         // Make the data plain
         const story = singleStoryData.get({ plain: true });
         const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+        // Determine if the user can edit the story
+        const canEdit = req.session.user == story.author;
         
         // Render single-story.handlebars and pass in these variables
         res.render('single-story', { 
             story, 
             comments,
             loggedIn: req.session.loggedIn, 
-            user: req.session.user 
+            user: req.session.user,
+            canEdit 
         });
 
     } catch (err) {
