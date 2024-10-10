@@ -4,12 +4,29 @@
                 <h2>
                     Story Submission
                 </h2>
-            </section id="singlestorysection">
-             <h3>{{story.name}}</h3>
-             <p>{{story.author}}</p>
+            </section >
+
+            <section id="singlestorysection">
+                <h3>{{story.name}}</h3>
+                <p>By: {{story.author}}</p>
+            </section>
+
+            <section>
+                <h3>Story Components:</h3>
+                <ul>
+                    <li>World: {{story.world}}</li>
+                    <li>Main Villain: {{story.main_villain}}</li>
+                    <li>Potential Factions: {{story.potential_factions}}</li>
+                    <li>Recommended Levels: {{story.levels}}</li>
+                </ul>
+            </section>
+            
+            <section>
+
 
              <h3>Description:</h3>
              <p>{{story.description}}</p>
+
             </section>
 
            
