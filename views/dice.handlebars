@@ -1,13 +1,31 @@
-<button id="dice-button" class="dice">
-    <img src="/images/dice.png" alt="20-sided dice" />
-</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="/js/dice.js" defer></script>
+</head>
+<body>
+    <button id="dice-button" class="dice">
+        <img src="/images/dice.png" alt="20-sided dice" />
+    </button>
+    
+    <button id="6-button" class="dice">
+        <img src="images/dice6.png" alt="6-sided dice"/>
+    </button>
 
-<script src="/js/dice.js"></script>
+    <button id="8-button" class="dice">
+        <img src="images/dice8.png" alt="8-sided dice"/>
+    </button>
 
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-<script>
-    document.getElementById('dice-button').addEventListener('click', function() {
-        const roll = _.random(1, 20);
-        alert(`You rolled a ${roll}!`);
-    });
-</script>
+        <button id="12-button" class="dice">
+        <img src="images/dice12.png" alt="12-sided dice"/>
+    </button>
+
+            <button id="4-button" class="dice">
+        <img src="images/dice4.png" alt="4-sided dice"/>
+    </button>
+</body>
+</html>
