@@ -1,23 +1,23 @@
 [
     {
         "author": "ethan",
-        "category": "Rule Type 1",
+        "title": "Rule Type 1",
         "description": "Every time someone says 'hello' everyone drinks"
 
     },
     {
         "author": "nick",
-        "category": "Rule Type 2",
+        "title": "Rule Type 2",
         "description": "Every time someone says 'goodbye' everyone give each other high fives"
     },
     {
         "author": "bridgett",
-        "category": "Rule Type 3",
+        "title": "Rule Type 3",
         "description": "Every time someone says 'roll initiative' everyone slaps the DM"
     },
     {
         "author": "jocelyn",
-        "category": "Rule Type 4",
+        "title": "Rule Type 4",
         "description": "Ok no more rules. Do whatever you want"
     }
 ]
