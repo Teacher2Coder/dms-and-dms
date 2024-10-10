@@ -1,3 +1,9 @@
+{{!-- If a user is logged in, show this button --}}
+{{#if loggedIn}}
+<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-quest" style="display: block; margin: 0 auto;">
+    Create a new Quest!
+</button>
+{{/if}}
 {{!-- For every quest in the database, create these elements --}}
 {{#each questDataPlain as |quest|}}
 <a href="/quests/{{quest.id}}" style="text-decoration: none;">
@@ -12,3 +18,7 @@
     </div>
 </a>
 {{/each}}
+
+{{#if loggedIn}}
+{{> add-quest-modal}}
+{{/if}}

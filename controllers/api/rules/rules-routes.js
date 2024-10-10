@@ -5,22 +5,12 @@ const Characters = require('../../../models/Characters');
 router.post('/', async (req, res) => {
     try {
         // Create a new character with the data from the req.body
-        const characterData = await Characters.create({
+        const ruleData = await Characters.create({
             name: req.body.nameInput,
             author: req.session.user,
             description: req.body.descriptionInput,
-            class: req.body.classInput,
-            skills: req.body.skillInput,
-            race: req.body.raceInput,
-            alignment: req.body.alignmentInput,
-            strength: req.body.strengthInput,
-            dexterity: req.body.dexterityInput,
-            constitution: req.body.constitutionInput,
-            intelligence: req.body.intelligenceInput,
-            wisdom: req.body.wisdomInput,
-            charisma: req.body.charismaInput
         });
-        res.status(200).json(characterData);
+        res.status(200).json(ruleData);
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
