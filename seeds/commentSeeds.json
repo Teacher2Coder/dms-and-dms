@@ -1,0 +1,50 @@
+[
+    {
+        "author": "nick",
+        "content": "This is a great idea",
+        "for": "character",
+        "category_id": 1
+    },
+    {
+        "author": "ethan",
+        "content": "I like this idea!",
+        "for": "character",
+        "category_id": 2
+    },
+    {
+        "author": "nick",
+        "content": "I might try this out next session!",
+        "for": "quest",
+        "category_id": 1
+    },
+    {
+        "author": "ethan",
+        "content": "Wow! This is cool!",
+        "for": "quest",
+        "category_id": 2
+    },
+    {
+        "author": "nick",
+        "content": "This is so well thought out!",
+        "for": "story",
+        "category_id": 1
+    },
+    {
+        "author": "ethan",
+        "content": "I am amazed!",
+        "for": "story",
+        "category_id": 2
+    },
+    {
+        "author": "nick",
+        "content": "I'm doing this from now on!",
+        "for": "rule",
+        "category_id": 1
+    },
+    {
+        "author": "ethan",
+        "content": "I'm going to respectfully disagree here!",
+        "for": "rule",
+        "category_id": 2
+    }
+]

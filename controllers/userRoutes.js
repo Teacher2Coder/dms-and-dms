@@ -8,7 +8,7 @@ const withAuth = require('../utils/auth');
 
 
 // URL looks like this -- localhost:3001/users/username
-router.get('/:username', async (req, res) => {
+router.get('/:username', withAuth, async (req, res) => {
     try {
         // Get user data, the user's characters, quests, stories and rules
         const userData = await Users.findOne({ where: { username: req.params.username }});

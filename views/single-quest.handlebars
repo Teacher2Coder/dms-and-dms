@@ -6,6 +6,7 @@
     <title>{{quest.name}} - Quest Details</title>
     <link rel="stylesheet" href="/css/style.css"> 
 </head>
+<div id="hidden-content" data-for="quest" data-key="{{quest.id}}"></div>
 <body>
     <header>
         <h1>{{quest.name}}</h1>
@@ -61,5 +62,12 @@
             <p>{{quest.charisma}}</p>
         </section>
 </main>
+    <section class="comment-section">
+      <h3>Comments</h3>
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-comment" style="display: block; margin: 0 auto;">Add your own comment!</button>
+      {{> comments}}
+    </section>
+
+{{> comment-modal}}
 </body>
 </html>
