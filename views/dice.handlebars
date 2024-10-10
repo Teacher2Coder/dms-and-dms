@@ -3,3 +3,11 @@
 </button>
 
 <script src="/js/dice.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script>
+    document.getElementById('dice-button').addEventListener('click', function() {
+        const roll = _.random(1, 20);
+        alert(`You rolled a ${roll}!`);
+    });
+</script>
