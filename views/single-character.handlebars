@@ -1,48 +1,55 @@
     <main>
         <div>
-            <section>
+            <section id="singlecharheader">
                 <h2>
-                    Recent Character Submissions
+                    Character Submission
                 </h2>
             </section>
 
-            {{#each character as |Characters|}}
-            <section>
+            <section id="singlecharsec">
               
               <h3>
-                {{Characters.name}}
-                <p>Race: {{Characters.race}}</p>
+                {{character.name}}
+                <p id="race">Race: {{character.race}}</p>
               </h3>
-              <p>
-                Created by: {{Characters.author}}
-              </p>
+            
 
-              <p>
-                Description: {{Characters.description}}
-              </p>
-              <ul>
-                <li>STR:{{Characters.strength}}</li>
-                <li>DEX:{{Characters.dexterity}}</li>
-                <li>CON:{{Characters.constitution}}</li>
-                <li>INT:{{Characters.intelligence}}</li>
-                <li>WIS:{{Characters.wisdom}}</li>
-                <li>CHA:{{Characters.charisma}}</li>
+              <h4>Ability Scores:</h4>
+
+              <ul id="abilityscrlist">
+                <li>STR:{{character.strength}}</li>
+                <li>DEX:{{character.dexterity}}</li>
+                <li>CON:{{character.constitution}}</li>
+                <li>INT:{{character.intelligence}}</li>
+                <li>WIS:{{character.wisdom}}</li>
+                <li>CHA:{{character.charisma}}</li>
               </ul>
 
+              <p>
+                Description: {{character.description}}
+              </p>
+
+              
+          
+
                <p>
-                Class: {{Characters.class}}
+                Class: {{character.class}}
               </p>
 
               <P>
-                Skills: {{Characters.skills}}
+                Skills: {{character.skills}}
               </P>
 
-              <P></P>
-                Alignment: {{Characters.alignment}}
+              <P>
+                Alignment: {{character.alignment}}
               </P>
+
+                <p>
+                Created by: {{character.author}}
+              </p>
 
             </section>
-            {{/each}}
+            
 
           
 

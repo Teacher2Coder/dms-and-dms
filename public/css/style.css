@@ -109,3 +109,39 @@ body {
 .dice:hover {
     animation: spin .5s linear infinite; /* Spin continuously while hovering */
 }
+
+#singlecharheader {
+    display:flex;
+    background-color: white;
+    justify-content: center;
+}
+
+#singlecharsec{
+    background-color: white;
+    border-radius: 20px;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    padding: 10px;
+}
+
+#race {
+    font-size: smaller;
+    font-style: italic;
+}
+
+#abilityscrlist {
+    list-style-type: none;
+    display: flex;
+   
+}
+
+#abilityscrlist li {
+    padding: 10px;
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    margin: 30px;
+
+}
