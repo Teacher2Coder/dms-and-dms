@@ -1,3 +1,10 @@
+{{!-- If a user is logged in, show this button --}}
+{{#if loggedIn}}
+<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-character" style="display: block; margin: 0 auto;">
+    Create a new Character!
+</button>
+{{/if}}
+
 {{!-- For every character in the database, create these elements --}}
 {{#each characterDataPlain as |characters|}}
 <a href="/characters/{{characters.id}}" style="text-decoration: none;">
@@ -12,3 +19,7 @@
     </div>
 </a>
 {{/each}}
+
+{{#if loggedIn}}
+{{> add-character-modal}}
+{{/if}}
