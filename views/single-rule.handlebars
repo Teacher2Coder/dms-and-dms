@@ -1,3 +1,4 @@
+    <div id="hidden-content" data-for="rule" data-key="{{rule.id}}"></div>
     <main>
         <div>
             <section id="singleruleheader">
@@ -12,7 +13,13 @@
              <p>{{rule.description}}</p>
             </section>
 
-           
+            <section class="comment-section">
+                <h3>Comments</h3>
+                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-comment" style="display: block; margin: 0 auto;">Add your own comment!</button>
+                {{> comments}}
+            </section>
+
+{{> comment-modal}}
 
              
         </div>
