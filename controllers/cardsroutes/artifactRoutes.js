@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const withAuth = require('../../utils/auth');
 
 // URL looks like this: localhost:3001/artifacts
 router.get('/', (req, res) => {

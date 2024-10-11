@@ -52,5 +52,26 @@ router.get('/dice', async (req, res) => {
         res.status(500).json(err);
     }
 });
+router.get('/cards', async (req, res) => {
+    try {
+        // Render about.handlebars and pass in variables
+        res.render('cards', { loggedIn: req.session.loggedIn, user: req.session.user })
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
+router.get('/white', (req, res) => {
+    try {
+        // Render artifact.handlebars and pass any necessary variables
+        res.render('white', { 
+            loggedIn: req.session.loggedIn, 
+            user: req.session.user 
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
