@@ -1,6 +1,8 @@
 {{#each comments as |comment|}}
-<div class="card">
-    <h4>{{comment.author}} says:</h4>
+<div class="card" style="padding: 10px; margin: 10px;">
+    <h4>
+        <a style="text-decoration: none; color: black;" href="/users/{{comment.author}}">{{comment.author}} says:</a>
+    </h4>
     <p>{{comment.content}}</p>
 </div>
 {{/each}}
