@@ -8,6 +8,17 @@ const storiesRoutes = require('./storiesRoutes');
 const questRoutes = require('./questRoutes');
 const rulesRoutes = require('./rulesRoutes');
 const apiRoutes = require('./api');
+const artifactRoutes = require('./cardsroutes/artifactRoutes');
+const blackRoutes = require('./cardsroutes/blackRoutes');
+const blueRoutes = require('./cardsroutes/blueRoutes');
+const cardsRoutes = require('./cardsroutes/cardsRoutes');
+const dungeonRoutes = require('./cardsroutes/dungeonRoutes');
+const greenRoutes= require('./cardsroutes/greenRoutes');
+const landRoutes = require('./cardsroutes/landRoutes');
+const multicoloredRoutes= require('./cardsroutes/multicoloredRoutes');
+const redRoutes = require('./cardsroutes/redRoutes');
+const whiteRoutes = require('./cardsroutes/whiteRoutes');
+
 
 // Middleware pointing to the routes the server needs to take
 router.use('/', homeRoutes);
