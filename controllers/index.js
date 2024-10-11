@@ -8,17 +8,7 @@ const storiesRoutes = require('./storiesRoutes');
 const questRoutes = require('./questRoutes');
 const rulesRoutes = require('./rulesRoutes');
 const apiRoutes = require('./api');
-const artifactRoutes = require('./cardsroutes/artifactRoutes');
-const blackRoutes = require('./cardsroutes/blackRoutes');
-const blueRoutes = require('./cardsroutes/blueRoutes');
-const cardsRoutes = require('./cardsroutes/cardsRoutes');
-const dungeonRoutes = require('./cardsroutes/dungeonRoutes');
-const greenRoutes= require('./cardsroutes/greenRoutes');
-const landRoutes = require('./cardsroutes/landRoutes');
-const multicoloredRoutes= require('./cardsroutes/multicoloredRoutes');
-const redRoutes = require('./cardsroutes/redRoutes');
-const whiteRoutes = require('./cardsroutes/whiteRoutes');
-
+// const cardRoutes = require('./cardsroutes/index');
 
 // Middleware pointing to the routes the server needs to take
 router.use('/', homeRoutes);
@@ -28,6 +18,7 @@ router.use('/stories', storiesRoutes);
 router.use('/quests', questRoutes);
 router.use('/rules', rulesRoutes);
 router.use('/api', apiRoutes);
+// router.use('/cards', cardRoutes);
 
 // URL looks like localhost:3001/about
 router.get('/about', async (req, res) => {
