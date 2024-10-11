@@ -1,10 +1,11 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 
-// URL: localhost:3001/artifacts
+// URL looks like this: localhost:3001/artifacts
 router.get('/', (req, res) => {
     try {
         // Render artifact.handlebars and pass any necessary variables
-        res.render('artifact', { 
+        res.render('dungeon', { 
             loggedIn: req.session.loggedIn, 
             user: req.session.user 
         });
