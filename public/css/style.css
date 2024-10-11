@@ -96,6 +96,19 @@ body {
     height: auto; /* Maintain aspect ratio */
 }
 
+.aligndice {
+    display: flex;
+
+}
+
+.mainheight {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 /* Animation for spinning */
 @keyframes spin {
     from {
