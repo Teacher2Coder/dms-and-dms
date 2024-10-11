@@ -20,7 +20,17 @@ Link to Github: https://github.com/Teacher2Coder/dms-and-dms
 
 ## Webpage Screenshot
 
+Home Page
 
+![Homepage-Screenshot](public/images/HomepageScreenshot.png)
+
+Character Page
+
+![Characterpage-Screenshot](public/images/CharacterpageScreenshot.png)
+
+Login Page
+
+![Loginpage-Screenshot](public/images/LoginpageScreenshot.png)
 
 ## Installation
 Installation requires npm install which will install all dependencies within the package.json.
