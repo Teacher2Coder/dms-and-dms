@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
         // Create a new character with the data from the req.body
         const characterData = await Characters.create({
             name: req.body.nameInput,
+            author: req.session.user,
             description: req.body.descriptionInput,
             class: req.body.classInput,
             skills: req.body.skillInput,
@@ -30,7 +31,6 @@ router.put('/:id', async (req, res) => {
     try {
         const characterData = await Characters.update({
             name: req.body.nameInput,
-            author: req.session.user,
             description: req.body.descriptionInput,
             class: req.body.classInput,
             skills: req.body.skillInput,

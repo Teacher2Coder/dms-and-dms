@@ -1,36 +1,31 @@
-    <div id="hidden-content" data-for="rules" data-key="{{rule.id}}"></div>
-    
+<div id="hidden-content" data-for="rules" data-key="{{rule.id}}"></div> 
 {{#if canEdit}}
-<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-rule">Edit this Rule</button>
-<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Rule</button>
+    <div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 20px;">
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-rule">Edit this Rule</button>
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Rule</button>
+    </div>
 {{/if}}
-    
-    <main>
-        <div>
-            <section id="singleruleheader">
-                <h2>
-                    Rule Submission
-                </h2>
-            </section id="singlerulesection">
-             <h3 id="title">{{rule.title}}</h3>
-             <p>{{rule.author}}</p>
 
-             <h3>Description:</h3>
-             <p id="description">{{rule.description}}</p>
-            </section>
+<div class="card content-card">
+    <header class="card-header"  id="singleruleheader">
+        <h3 id="title" style="text-align: center;">{{rule.title}}</h3>
+    </header>
+    <div class="card-body">
+        <h4 style="text-align: center;">Description:</h4>
+        <p id="description" style="text-align: center;">{{rule.description}}</p>
+    </div>
+    <footer class="card-footer" style="text-align: center;">
+        <a href="/users/{{rule.author}}" style="text-decoration: none; color: black;">
+            <p>Created by: {{rule.author}}</p>
+        </a>
+    </footer>         
+</div>
 
-            <section class="comment-section">
-                <h3>Comments</h3>
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-comment" style="display: block; margin: 0 auto;">Add your own comment!</button>
-                {{> comments}}
-            </section>
-
-
-
-             
-        </div>
-        
-    </main>
+<section style="margin-top: 20px; display: flex; flex-direction: column; justify-content: center;" class="comment-section card">
+  <h3 style="text-align: center; margin-top: 20px;">Comments</h3>
+  <button class="btn btn-danger comment-btn" data-bs-toggle="modal" data-bs-target="#add-comment">Add your own comment!</button>
+  {{> comments}}
+</section>
 
 {{> comment-modal}}
 

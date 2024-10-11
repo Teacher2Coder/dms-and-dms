@@ -5,37 +5,40 @@
 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Quest</button>
 {{/if}}
 
-<body>
-    <header>
-        <h1 id="name">{{quest.name}}</h1>
-        <p>Created by: <a href="/users/{{quest.author}}" style="text-decoration: none;">{{quest.author}}</a></p>
-    </header>
-<main>
-    <section>
-        <h2>Description</h2>
-        <p id="description">{{quest.description}}</p>
-    </section>
-    <section>
-        <h3>Quest Giver</h3>
-        <p id="quest-giver">{{quest.quest_giver}}</p>
-    </section>
-    <section>
-        <h3>Quest Location</h3>
-        <p id="location">{{quest.location}}</p>
-    </section>
-    <section>
-        <h3>Rewards</h3>
-        <p id="rewards">{{quest.rewards}}</p>
-    </section>     
-</main>
-    <section class="comment-section">
-      <h3>Comments</h3>
-      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-comment" style="display: block; margin: 0 auto;">Add your own comment!</button>
-      {{> comments}}
-    </section>
+<div class="card content-card">
+        <header class="card-header">
+            <h3 style="text-align: center;" id="name">{{quest.name}}</h3>
+        </header>
+
+        <div style="text-align: center; padding-top: 20px;">
+            <h4>Description</h4>
+            <p id="description">{{quest.description}}</p>
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 20px;">
+            <div class="card" style="width: 30%; text-align: center;">
+                <h5>Quest Giver</h5>
+                <p id="quest-giver">{{quest.quest_giver}}</p>
+            </div>
+            <div class="card" style="width: 30%; text-align: center;">
+                <h5>Quest Location</h5>
+                <p id="location">{{quest.location}}</p>
+            </div>
+            <div class="card" style="width: 30%; text-align: center;">
+                <h5>Rewards</h5>
+                <p id="rewards">{{quest.rewards}}</p>
+            </div>
+        </div>
+        <footer class="card-footer">
+            <p style="text-align: center;">Created by: <a href="/users/{{quest.author}}" style="text-decoration: none; color: black;">{{quest.author}}</a></p>
+        </footer>
+</div>
+<section style="margin-top: 20px; display: flex; flex-direction: column; justify-content: center;" class="comment-section card">
+  <h3 style="text-align: center; margin-top: 20px;">Comments</h3>
+  <button class="btn btn-danger comment-btn" data-bs-toggle="modal" data-bs-target="#add-comment">Add your own comment!</button>
+  {{> comments}}
+</section>
 
 {{> comment-modal}}
-</body>
 
 {{#if canEdit}}
 {{> edit-quest-modal}}

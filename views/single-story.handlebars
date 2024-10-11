@@ -1,53 +1,55 @@
-  <div id="hidden-content" data-for="stories" data-key="{{story.id}}"></div>
-  <main>
+<div id="hidden-content" data-for="stories" data-key="{{story.id}}"></div>
 
 {{#if canEdit}}
-<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-story">Edit this Story</button>
-<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Story</button>
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 20px;">
+    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-story">Edit this Story</button>
+    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Story</button>
+</div>
 {{/if}}
 
-        <div class="card">
-            <section id="singlestoryheader">
-                <h2>
-                    Story Submission
-                </h2>
-            </section >
+<div class="card content-card">
+    <header class="card-header" style="text-align: center;">
+        <h3 id="name">{{story.name}}</h3>
+    </header>
+    <div class="card-body">
+        <section style="text-align: center;">
+            <h4>Description:</h4>
+            <p id="description">{{story.description}}</p>
+        </section>
+        <section>
+            <h4 style="text-align: center; margin-top: 40px;">Story Components:</h4>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                <div class="card" style="width: 40%; padding: 5px; margin: 2%; text-align: center;">
+                    <h5>World:</h5>
+                    <p id="world">{{story.world}}</p>
+                </div>
+                <div class="card" style="width: 40%; padding: 5px; margin: 2%; text-align: center;">
+                    <h5>Main Villain:</h5>
+                    <p id="villain">{{story.main_villain}}</p>
+                </div>
+                <div class="card" style="width: 40%; padding: 5px; margin: 2%; text-align: center;">
+                    <h5>Potential Factions:</h5>
+                    <p id="factions">{{story.potential_factions}}</p>
+                </div>
+                <div class="card" style="width: 40%; padding: 5px; margin: 2%; text-align: center;">
+                    <h5>Recommended Levels:</h5>
+                    <p id="levels">{{story.levels}}</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="card-footer" style="text-align: center">
+        <p>Created by: {{story.author}}</p>
+    </footer>
+</div>
 
-            <section id="singlestorysection">
-                <h3 id="name">{{story.name}}</h3>
-                <p>By: {{story.author}}</p>
-            </section>
+<section style="margin-top: 20px; display: flex; flex-direction: column; justify-content: center;" class="comment-section card">
+  <h3 style="text-align: center; margin-top: 20px;">Comments</h3>
+  <button class="btn btn-danger comment-btn" data-bs-toggle="modal" data-bs-target="#add-comment">Add your own comment!</button>
+  {{> comments}}
+</section>
 
-            <section>
-                <h3>Story Components:</h3>
-                <ul>
-                    <li>World: <div id="world">{{story.world}}</div></li>
-                    <li>Main Villain: <div id="villain">{{story.main_villain}}</div></li>
-                    <li>Potential Factions: <div id="factions">{{story.potential_factions}}</div></li>
-                    <li>Recommended Levels: <div id="levels">{{story.levels}}</div></li>
-                </ul>
-            </section>
-            
-            <section>
-
-
-             <h3>Description:</h3>
-             <p id="description">{{story.description}}</p>
-
-            </section>
-
-            <section class="comment-section">
-                <h3>Comments</h3>
-                <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-comment" style="display: block; margin: 0 auto;">Add your own comment!</button>
-                {{> comments}}
-            </section>
-
-            {{> comment-modal}}
-
-             
-        </div>
-        
-    </main>
+{{> comment-modal}}
 
 {{#if canEdit}}
 {{> edit-story-modal}}
