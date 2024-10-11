@@ -1,9 +1,14 @@
+// Call the router
 const router = require('express').Router();
+
+// Import the models
 const Quest = require('../models/Quest');
 const Comments = require('../models/Comment');
+
+// Import authorization helper
 const withAuth = require('../utils/auth');
 
-// URL looks like this: localhost:3001/quests
+// URL looks like localhost:3001/quests
 router.get('/', async (req, res) => {
     try {
         
@@ -28,7 +33,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// URL looks like this: localhost.3001/quests/1
+// URL looks like localhost.3001/quests/1
 router.get('/:id', withAuth, async (req, res) => {
     try {
         // Get the single quest data

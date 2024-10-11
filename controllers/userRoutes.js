@@ -1,13 +1,18 @@
+// Call the router
 const router = require('express').Router();
+
+// Import the models
 const Users = require('../models/User');
 const Characters = require('../models/Characters');
 const Quests = require('../models/Quest');
 const Stories = require('../models/Stories');
 const Rules = require('../models/Rules');
+
+// Import the authentication helper
 const withAuth = require('../utils/auth');
 
 
-// URL looks like this -- localhost:3001/users/username
+// URL looks like localhost:3001/users/username
 router.get('/:username', withAuth, async (req, res) => {
     try {
         // Get user data, the user's characters, quests, stories and rules
@@ -27,7 +32,7 @@ router.get('/:username', withAuth, async (req, res) => {
         // Determine if the user has permission to edit this information
         const canEdit = req.params.username == req.session.user;
         
-        // Render user-profile.hanbdlebars and pass in these variables
+        // Render user-profile.handlebars and pass in these variables
         res.render('user-profile', { 
             userDataPlain,
             characterDataPlain, 

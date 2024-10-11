@@ -1,9 +1,14 @@
+// Call the router
 const router = require('express').Router();
+
+// Import the models
 const Story = require('../models/Stories');
 const Comments = require('../models/Comment');
+
+// Import the authentication helper
 const withAuth = require('../utils/auth');
 
-// URL looks like this: localhost.3001/characters
+// URL looks like localhost:3001/stories
 router.get('/', async (req, res) => {
     try {
         
@@ -27,7 +32,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// URL looks like this: localhost.3001/characters/1
+// URL looks like localhost:3001/stories/1
 router.get('/:id', withAuth, async (req, res) => {
     try {
         // Get the single story data

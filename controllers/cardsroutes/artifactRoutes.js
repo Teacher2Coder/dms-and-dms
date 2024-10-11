@@ -1,3 +1,4 @@
+// Call the router
 const router = require('express').Router();
 
 // URL looks like this: localhost:3001/artifacts

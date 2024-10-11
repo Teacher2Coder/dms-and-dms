@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Users = require('../../../models/User');
 
-// URL looks like this -- localhost:3001/api/users
+// URL looks like localhost:3001/api/users
 router.post('/', async (req, res) => {
   try {
     // Create a new user with the data that is sent to the server
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 });
 
 // Login
-// URL looks like this -- localhost:3001/api/users/login
+// URL looks like localhost:3001/api/users/login
 router.post('/login', async (req, res) => {
   try {
     // Find the user with the username from the req.body
@@ -67,7 +67,7 @@ router.post('/login', async (req, res) => {
 });
   
 // Logout
-// URL looks like this -- localhost:3001/api/users/logout
+// URL looks like localhost:3001/api/users/logout
 router.post('/logout', (req, res) => {
   // If the user is logged in, destroy their session
   if (req.session.loggedIn) {
@@ -80,7 +80,7 @@ router.post('/logout', (req, res) => {
 });
 
 // Edit user bio
-// URL looks like this -- localhost:3001/api/users/username
+// URL looks like localhost:3001/api/users/username
 router.put('/:username', async (req, res) => {
   try {
 
@@ -89,6 +89,7 @@ router.put('/:username', async (req, res) => {
       bio: req.body.newBio
     },
     {
+      // Update the user with the username from the req.params.username
       where: { username: req.params.username }
     });
 

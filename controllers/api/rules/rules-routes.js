@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
         // Create a new character with the data from the req.body
         const ruleData = await Rules.create({
             title: req.body.titleInput,
+            // Author is named after the active user
             author: req.session.user,
             description: req.body.descriptionInput,
         });
@@ -17,13 +18,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+// URL looks like localhost:3001/api/rules/1
 router.put('/:id', async (req, res) => {
     try {
+        // Update the rule with the data from the req.body
         const ruleData = await Rules.update({
             title: req.body.titleInput,
             description: req.body.descriptionInput
         }, 
         {
+            // Update the rule with the data from the req.body
             where: { id: req.params.id }
         });
         res.status(200).json(ruleData);
@@ -33,8 +37,10 @@ router.put('/:id', async (req, res) => {
     }
 })
 
+// URL looks like localhost:3001/api/rules/1
 router.delete('/:id', async (req, res) => {
     try {
+        // Delete the rule where the rule's id is req.params.id
         const ruleData = await Rules.destroy({
             where: { id: req.params.id }
         })

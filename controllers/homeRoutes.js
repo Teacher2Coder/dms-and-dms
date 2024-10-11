@@ -1,13 +1,18 @@
+// Call the router
 const router = require('express').Router();
+
+// Import the models
 const Character = require('../models/Characters');
 const Stories = require('../models/Stories');
 const Quests = require('../models/Quest');
 const Rules = require('../models/Rules');
 const User = require('../models/User');
+
+// Import authorization helper
 const withAuth = require('../utils/auth');
 
 
-// URL looks like this: localhost:3001/
+// URL looks like localhost:3001/
 router.get('/', async (req, res) => {
   try {
     // Find all the character data and put in reverse order
@@ -75,7 +80,7 @@ router.get('/', async (req, res) => {
 
 
 
-// URL looks like this: localhost:3001/login
+// URL looks like localhost:3001/login
 router.get('/login', (req, res) => {
   // If the user is logged in, send them back to the homepage
   if (req.session.loggedIn) {
@@ -86,6 +91,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// URL looks like localhost:3001/register
 router.get('/register', (req, res) => {
   // If the user is logged in, send them back to the homepage
   if (req.session.loggedIn) {

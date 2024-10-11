@@ -1,25 +1,37 @@
 const router = require('express').Router();
 
-const artifactRoutes = require('../cardsroutes/artifactRoutes');
-const blackRoutes = require('../cardsroutes/blackRoutes');
-const blueRoutes = require('../cardsroutes/blueRoutes');
-const cardsRoutes = require('../cardsroutes/cardsRoutes');
-const dungeonRoutes = require('../cardsroutes/dungeonRoutes');
-const greenRoutes= require('../cardsroutes/greenRoutes');
-const landRoutes = require('../cardsroutes/landRoutes');
-const multicoloredRoutes= require('../cardsroutes/multicoloredRoutes');
-const redRoutes = require('../cardsroutes/redRoutes');
-const whiteRoutes = require('../cardsroutes/whiteRoutes');
+const artifactRoutes = require('./artifactRoutes');
+const blackRoutes = require('./blackRoutes');
+const blueRoutes = require('./blueRoutes');
+const dungeonRoutes = require('./dungeonRoutes');
+const greenRoutes= require('./greenRoutes');
+const landRoutes = require('./landRoutes');
+const multicoloredRoutes= require('./multicoloredRoutes');
+const redRoutes = require('./redRoutes');
+const whiteRoutes = require('./whiteRoutes');
 
 router.use('/artifacts', artifactRoutes);
 router.use('/black', blackRoutes);
 router.use('/blue', blueRoutes);
-router.use('/cards', cardsRoutes);
 router.use('/dungeons', dungeonRoutes);
 router.use('/green', greenRoutes);
 router.use('/land', landRoutes);
 router.use('/multicolored', multicoloredRoutes);
 router.use('/red', redRoutes);
 router.use('/white', whiteRoutes);
+
+// URL looks like localhost:3001/cards
+router.get('/', async (req, res) => {
+    try {
+        // Render about.handlebars and pass in variables
+        res.render('cards', { 
+            loggedIn: req.session.loggedIn, 
+            user: req.session.user 
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;

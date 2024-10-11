@@ -7,6 +7,7 @@ router.post('/', async (req, res) => {
         // Create a new quest with the data from the req.body
         const questData = await Quests.create({
             name: req.body.nameInput,
+            // Author is named after the active user
             author: req.session.user,
             description: req.body.descriptionInput,
             quest_giver: req.body.questGiverInput,
@@ -32,6 +33,7 @@ router.put('/:id', async (req, res) => {
             rewards: req.body.rewardsInput
         },
         {
+            // Update the quest with the id that matches the req.params.id
             where: { id: req.params.id }
         });
         res.status(200).json(questData);
@@ -44,6 +46,7 @@ router.put('/:id', async (req, res) => {
 // URL looks like this: localhost:3001/api/characters/1
 router.delete('/:id', async (req, res) => {
     try {
+        // Delete the character where the quest's id is req.params.id
         const questData = Quests.destroy({ where: { id: req.params.id } });
         res.status(200).json(questData);
     } catch (err) {
