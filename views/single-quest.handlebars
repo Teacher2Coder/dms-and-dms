@@ -1,0 +1,43 @@
+<div id="hidden-content" data-for="quests" data-key="{{quest.id}}"></div>
+
+{{#if canEdit}}
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-quest">Edit this Quest</button>
+<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Quest</button>
+{{/if}}
+
+<body>
+    <header>
+        <h1 id="name">{{quest.name}}</h1>
+        <p>Created by: <a href="/users/{{quest.author}}" style="text-decoration: none;">{{quest.author}}</a></p>
+    </header>
+<main>
+    <section>
+        <h2>Description</h2>
+        <p id="description">{{quest.description}}</p>
+    </section>
+    <section>
+        <h3>Quest Giver</h3>
+        <p id="quest-giver">{{quest.quest_giver}}</p>
+    </section>
+    <section>
+        <h3>Quest Location</h3>
+        <p id="location">{{quest.location}}</p>
+    </section>
+    <section>
+        <h3>Rewards</h3>
+        <p id="rewards">{{quest.rewards}}</p>
+    </section>     
+</main>
+    <section class="comment-section">
+      <h3>Comments</h3>
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-comment" style="display: block; margin: 0 auto;">Add your own comment!</button>
+      {{> comments}}
+    </section>
+
+{{> comment-modal}}
+</body>
+
+{{#if canEdit}}
+{{> edit-quest-modal}}
+{{> delete-modal}}
+{{/if}}

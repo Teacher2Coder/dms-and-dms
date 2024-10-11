@@ -6,8 +6,9 @@
       </button>
     </h2>
     <div id="first-character" class="accordion-collapse collapse">
-      <div class="accordion-body">
+      <div class="accordion-body" style="display: flex; flex-direction: column;">
         {{firstCharacter.description}}
+        <a class="btn btn-danger" href="/characters/{{firstCharacter.id}}">Check this Character Out!</a>
       </div>
     </div>
   </div>
@@ -18,8 +19,9 @@
       </button>
     </h2>
     <div id="second-character" class="accordion-collapse collapse">
-      <div class="accordion-body">
+      <div class="accordion-body" style="display: flex; flex-direction: column;">
         {{secondCharacter.description}}
+        <a class="btn btn-danger" href="/characters/{{secondCharacter.id}}">Check this Character Out!</a>
       </div>
     </div>
   </div>
@@ -30,8 +32,9 @@
       </button>
     </h2>
     <div id="third-character" class="accordion-collapse collapse">
-      <div class="accordion-body">
+      <div class="accordion-body" style="display: flex; flex-direction: column;">
         {{thirdCharacter.description}}
+        <a class="btn btn-danger" href="/characters/{{thirdCharacter.id}}">Check this Character Out!</a>
       </div>
     </div>
   </div>

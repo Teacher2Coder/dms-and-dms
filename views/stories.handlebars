@@ -1,6 +1,12 @@
+{{!-- If a user is logged in, show this button --}}
+{{#if loggedIn}}
+<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-story" style="display: block; margin: 0 auto;">
+    Create a new Story!
+</button>
+{{/if}}
 {{!-- For every stories in the database, create these elements --}}
 {{#each storiesDataPlain as |story|}}
-<a href="/quests/{{story.id}}" style="text-decoration: none;">
+<a href="/stories/{{story.id}}" style="text-decoration: none;">
     <div class="card character-card">             
         <div style="display: flex; flex-direction: row; justify-content: space-around">
             <h3 style="color: red;">{{story.name}}</h3>
@@ -12,3 +18,7 @@
     </div>
 </a>
 {{/each}}
+
+{{#if loggedIn}}
+{{> add-story-modal}}
+{{/if}}

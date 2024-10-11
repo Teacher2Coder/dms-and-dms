@@ -6,8 +6,9 @@
       </button>
     </h2>
     <div id="first-quest" class="accordion-collapse collapse">
-      <div class="accordion-body">
+      <div class="accordion-body" style="display: flex; flex-direction: column;">
         {{firstQuest.description}}
+        <a class="btn btn-danger" href="/quests/{{firstQuest.id}}">Check this Quest Out!</a>
       </div>
     </div>
   </div>
@@ -18,8 +19,9 @@
       </button>
     </h2>
     <div id="second-quest" class="accordion-collapse collapse">
-      <div class="accordion-body">
+      <div class="accordion-body" style="display: flex; flex-direction: column;">
         {{secondQuest.description}}
+        <a class="btn btn-danger" href="/quests/{{secondQuest.id}}">Check this Quest Out!</a>
       </div>
     </div>
   </div>
@@ -30,8 +32,9 @@
       </button>
     </h2>
     <div id="third-quest" class="accordion-collapse collapse">
-      <div class="accordion-body">
+      <div class="accordion-body" style="display: flex; flex-direction: column;">
         {{thirdQuest.description}}
+        <a class="btn btn-danger" href="/quests/{{thirdQuest.id}}">Check this Quest Out!</a>
       </div>
     </div>
   </div>

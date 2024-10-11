@@ -1,9 +1,15 @@
+{{!-- If a user is logged in, show this button --}}
+{{#if loggedIn}}
+<button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#add-rule" style="display: block; margin: 0 auto;">
+    Create a new Rule!
+</button>
+{{/if}}
 {{!-- For every rule in the database, create these elements --}}
 {{#each rulesDataPlain as |rule|}}
-<a href="/quests/{{rule.id}}" style="text-decoration: none;">
+<a href="/rules/{{rule.id}}" style="text-decoration: none;">
     <div class="card character-card">             
         <div style="display: flex; flex-direction: row; justify-content: space-around">
-            <h3 style="color: red;">{{rule.category}}</h3>
+            <h3 style="color: red;">{{rule.title}}</h3>
             <a href="/users/{{rule.author}}" style="text-decoration: none; color: red;">
                 <h3>Created by: {{rule.author}}</h3>
             </a>
@@ -12,3 +18,7 @@
     </div>
 </a>
 {{/each}}
+
+{{#if loggedIn}}
+{{> add-rule-modal}}
+{{/if}}

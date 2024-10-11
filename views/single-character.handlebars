@@ -1,0 +1,70 @@
+<div id="hidden-content" data-for="characters" data-key="{{character.id}}"></div>
+    
+<main>
+  <div>
+    <section id="singlecharheader">
+      <h2>Character Submission</h2>
+    </section>
+    {{#if canEdit}}
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-character">Edit this Character</button>
+    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Character</button>
+    {{/if}}
+    <section class="card" id="singlecharsec">        
+      <h3 class="card-header" style="text-align: center;" id="name">{{character.name}}</h3>
+        <div class="card-body">
+          <h4 style="text-align: center; margin-top: 10px;">Ability Scores:</h4>
+          <ul id="abilityscrlist" style="justify-content: center;">
+            <li class="card" style="text-align: center; display: flex; flex-direction: column;">STR:<div id="strength">{{character.strength}}</div></li>
+            <li class="card" style="text-align: center; display: flex; flex-direction: column;">DEX:<div id="dexterity">{{character.dexterity}}</div></li>
+            <li class="card" style="text-align: center; display: flex; flex-direction: column;">CON:<div id="constitution">{{character.constitution}}</div></li>
+            <li class="card" style="text-align: center; display: flex; flex-direction: column;">INT:<div id="intelligence">{{character.intelligence}}</div></li>
+            <li class="card" style="text-align: center; display: flex; flex-direction: column;">WIS:<div id="wisdom">{{character.wisdom}}</div></li>
+            <li class="card" style="text-align: center; display: flex; flex-direction: column;">CHA:<div id="charisma">{{character.charisma}}</div></li>
+          </ul>
+
+          <h5 style="text-align: center;">Description:</h5>
+          <p style="text-align: center;" id="description">{{character.description}}</p>
+        
+          <div style="display: flex; flex-direction: rows; flex-wrap: wrap; justify-content: center;">
+            <div class="card" style="width: 45%; text-align: center; margin: 10px;">
+              <h6 style="margin-top: 5px;">Race:</h6>
+              <p id="race">{{character.race}}</p>
+            </div>
+            <div class="card"  style="width: 45%; text-align: center; margin: 10px;">
+              <h6 style="margin-top: 5px;">Class:</h6>
+              <p id="class">{{character.class}}</p>
+            </div>
+            <div class="card"  style="width: 45%; text-align: center; margin: 10px;">
+              <h6 style="margin-top: 5px;">Skills:</h6>
+              <p id="skills">{{character.skills}}</p>
+            </div>
+            <div class="card"  style="width: 45%; text-align: center; margin: 10px;">
+              <h6 style="margin-top: 5px;">Alignment:</h6>
+              <p id="alignment">{{character.alignment}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer" style="text-align: center;">
+          <a  href="/users/{{character.author}}" style="text-decoration: none; color: black;">
+            <p>
+              Created by: {{character.author}}
+            </p>
+          </a>
+        </div>
+      </section>
+    </div>
+        
+</main>
+
+<section style="margin-top: 20px; display: flex; flex-direction: column; justify-content: center;" class="comment-section card">
+  <h3 style="text-align: center; margin-top: 20px;">Comments</h3>
+  <button class="btn btn-secondary comment-btn" data-bs-toggle="modal" data-bs-target="#add-comment">Add your own comment!</button>
+  {{> comments}}
+</section>
+
+{{> comment-modal}}
+
+{{#if canEdit}}
+{{> edit-character-modal}}
+{{> delete-modal}}
+{{/if}}
