@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const Characters = require('../../../models/Characters');
 
-// URL looks like this: localhost.3001/api/characters
+// URL looks like this: localhost:3001/api/characters
 router.post('/', async (req, res) => {
     try {
         // Create a new character with the data from the req.body
         const characterData = await Characters.create({
             name: req.body.nameInput,
+            // Author is named after the active user
             author: req.session.user,
             description: req.body.descriptionInput,
             class: req.body.classInput,
@@ -27,8 +28,10 @@ router.post('/', async (req, res) => {
     }
 });
 
+// URL looks like localhost:3001/api/characters/1
 router.put('/:id', async (req, res) => {
     try {
+        // Update the character with the data from the req.body
         const characterData = await Characters.update({
             name: req.body.nameInput,
             description: req.body.descriptionInput,
@@ -44,6 +47,7 @@ router.put('/:id', async (req, res) => {
             charisma: req.body.charismaInput
         },
         {
+            // Update the character with the id that matches the req.params.id
             where: { id: req.params.id }
         });
         res.status(200).json(characterData);
@@ -51,10 +55,12 @@ router.put('/:id', async (req, res) => {
         console.error(err);
         res.status(500).json(err);
     }
-})
+});
 
+// URL looks like localhost:3001/api/characters/1
 router.delete('/:id', async (req, res) => {
     try {
+        // Delete the character where the character's id is req.params.id
         const characterData = Characters.destroy({ where: { id: req.params.id } });
         res.status(200).json(characterData);
     } catch (err) {

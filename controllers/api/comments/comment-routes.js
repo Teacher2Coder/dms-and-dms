@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const Comment = require('../../../models/Comment');
 
-// URL looks like this: localhost.3001/api/characters
+// URL looks like this: localhost:3001/api/comments
 router.post('/', async (req, res) => {
     try {
-        // Create a new character with the data from the req.body
+        // Create a new comment with the data from the req.body
         const commentData = await Comment.create({
+            // Author is named after the active user
             author: req.session.user,
             content: req.body.content,
             for: req.body.dataFor,

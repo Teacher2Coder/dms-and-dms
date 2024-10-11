@@ -1,3 +1,4 @@
+// Call the router
 const router = require('express').Router();
 
 // Import the routes

@@ -38,6 +38,7 @@ User.init(
         },
         bio: {
             type: DataTypes.STRING,
+            // Bio needs to be null upon creation
             allowNull: true,
         },
     },

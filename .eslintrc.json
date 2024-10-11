@@ -32,6 +32,6 @@
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
       "radix": "off",
-      "allowInParentheses": "true"
+      "allowInParentheses": "off"
     }
 }
