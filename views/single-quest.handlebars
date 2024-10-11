@@ -1,8 +1,10 @@
 <div id="hidden-content" data-for="quests" data-key="{{quest.id}}"></div>
 
 {{#if canEdit}}
-<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#edit-quest">Edit this Quest</button>
-<button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Quest</button>
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 20px;">
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-quest">Edit this Quest</button>
+      <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete this Quest</button>
+    </div>
 {{/if}}
 
 <div class="card content-card">

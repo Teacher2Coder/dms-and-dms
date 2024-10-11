@@ -17,7 +17,7 @@ const handleAddRule = async (event) => {
     if (response.ok) {
         location.reload();
     } else {
-        alert('Failed to create new character!');
+        alert('Failed to create new rule!');
     }
 }
 
