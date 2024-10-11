@@ -76,8 +76,10 @@ body {
 }
 
 
-.character-card {
+.menu-card {
     padding: 20px;
+    width: 80%;
+    margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -101,13 +103,13 @@ body {
 
 }
 
-.mainheight {
+/* .mainheight {
     height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-}
+} */
 
 /* Animation for spinning */
 @keyframes spin {
@@ -140,8 +142,15 @@ body {
     width: 10%;
 }
 
+.content-card {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .comment-section {
     margin-top: 20px; 
+    width: 80%;
+    margin: 0 auto;
     display: flex; 
     flex-direction: column; 
     justify-content: center;
