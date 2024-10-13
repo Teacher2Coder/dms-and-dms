@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/dms-and-dms/public/images/logo.png'); /* Replace with your background image path */
+    background-image: url('../images/logo.png'); /* Replace with your background image path */
     background-size: cover; /* Cover the entire viewport */
     background-position: center; /* Center the image */
     margin: 0;
@@ -61,4 +61,25 @@ header {
 
 .back-button:hover {
     background-color: #5a6268;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap to the next line if there are too many */
+    justify-content: flex-start; /* Aligns images to the start */
+    width: 100%; /* Ensures the container takes full width */
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap within the card */
+    width: 100%; /* Ensures the card takes full width */
+    flex-direction: row;
+}
+
+.card-img {
+    max-width: 303px; /* Set a maximum width for each image */
+    height: auto; /* Maintains aspect ratio */
+    margin: 10px; /* Adds space between images */
+    display: block; /* Ensures images are treated as block elements */
+    flex: 0 0 auto; /* Prevents images from stretching */
 }

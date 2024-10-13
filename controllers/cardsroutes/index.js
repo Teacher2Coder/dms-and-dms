@@ -10,10 +10,10 @@ const multicoloredRoutes= require('./multicoloredRoutes');
 const redRoutes = require('./redRoutes');
 const whiteRoutes = require('./whiteRoutes');
 
-router.use('/artifacts', artifactRoutes);
+router.use('/artifact', artifactRoutes);
 router.use('/black', blackRoutes);
 router.use('/blue', blueRoutes);
-router.use('/dungeons', dungeonRoutes);
+router.use('/dungeon', dungeonRoutes);
 router.use('/green', greenRoutes);
 router.use('/land', landRoutes);
 router.use('/multicolored', multicoloredRoutes);
