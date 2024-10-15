@@ -8,54 +8,52 @@ class User extends Model {
     }
 }
 
-User.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true,
-            },
-        },
-        password: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-            validate: {
-                len: [6],
-            },
-        },
-        bio: {
-            type: DataTypes.STRING,
-            // Bio needs to be null upon creation
-            allowNull: true,
-        },
+User.init({
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        // Before a password is created, hash it using bcrypt
-        hooks: {
-            async beforeCreate(newUserData) {
-              newUserData.password = await bcrypt.hash(newUserData.password, 10);
-              return newUserData;
-            },
-        },
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'users',
-    }
-);
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
+    password: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [6],
+      },
+    },
+    bio: {
+      type: DataTypes.STRING,
+      // Bio needs to be null upon creation
+      allowNull: true,
+    },
+  },
+  {
+    // Before a password is created, hash it using bcrypt
+    hooks: {
+      async beforeCreate(newUserData) {
+      newUserData.password = await bcrypt.hash(newUserData.password, 10);
+      return newUserData;
+      },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'users',
+});
 
 module.exports = User;

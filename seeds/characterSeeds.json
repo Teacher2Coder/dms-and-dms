@@ -17,7 +17,7 @@
     {
         "name": "Nurbit",
         "author": "nick",
-        "description": "This is a Bard who tries to tolve all of his problems with rock and roll",
+        "description": "This is a Bard who tries to solve all of his problems with rock and roll",
         "class": "Bard",
         "skills": "Musician",
         "race": "Lion Person",
@@ -43,5 +43,5 @@
         "intelligence": "7",
         "wisdom": "9",
         "charisma": "16"
-       }
+    }
 ]

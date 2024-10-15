@@ -34,7 +34,9 @@ router.get('/:id', withAuth, async (req, res) => {
         const singleRuleData = await Rules.findByPk(req.params.id);
 
         // Find the comments on this particular rule
-        const commentData = await Comments.findAll({ where: { for: 'rules', category_id: req.params.id }})
+        const commentData = await Comments.findAll({ 
+            where: { for: 'rules', category_id: req.params.id }
+        });
 
         // Make the data plain
         const rule = singleRuleData.get({ plain: true });

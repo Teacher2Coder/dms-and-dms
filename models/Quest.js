@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Quest extends Model { }
 
+// Define the quest table
 Quest.init(
   {
     id: {

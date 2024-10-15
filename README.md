@@ -13,7 +13,7 @@
 
 DMs & DMs is a webpage designed to connect DMs with other DMs to share different ideas for characters, stories, quest, and homebrewed rules.
 
- ## Link to deployed application
+## Link to deployed application
  
 Link to Deployed Page: https://dms-and-dms.onrender.com
 Link to Github: https://github.com/Teacher2Coder/dms-and-dms
