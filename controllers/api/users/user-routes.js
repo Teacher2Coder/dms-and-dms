@@ -1,10 +1,10 @@
 // Call the router
-const router = require('express').Router();
+const router = require("express").Router();
 // Import the model
-const Users = require('../../../models/User');
+const Users = require("../../../models/User");
 
 // URL looks like localhost:3001/api/users
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     // Create a new user with the data that is sent to the server
     const dbUserData = await Users.create({
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-  
+
     // Save the session with these values passed in
     req.session.save(() => {
       req.session.loggedIn = true;
@@ -27,18 +27,18 @@ router.post('/', async (req, res) => {
 
 // Login
 // URL looks like localhost:3001/api/users/login
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     // Find the user with the username from the req.body
     const userData = await Users.findOne({
-      where: { username: req.body.username }
+      where: { username: req.body.username },
     });
 
     // If the user isn't found, send the error message
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect username or password. Please try again!' });
+        .json({ message: "Incorrect username or password. Please try again!" });
       return;
     }
 
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect username or password. Please try again!' });
+        .json({ message: "Incorrect username or password. Please try again!" });
       return;
     }
 
@@ -60,17 +60,17 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: userData, message: 'You are now logged in!' });
+        .json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-  
+
 // Logout
 // URL looks like localhost:3001/api/users/logout
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   // If the user is logged in, destroy their session
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -83,16 +83,18 @@ router.post('/logout', (req, res) => {
 
 // Edit user bio
 // URL looks like localhost:3001/api/users/username
-router.put('/:username', async (req, res) => {
+router.put("/:username", async (req, res) => {
   try {
     // Update the user with the bio from the req.body
-    const updatedUser = Users.update({
-      bio: req.body.newBio
-    },
-    {
-      // Update the user with the username from the req.params.username
-      where: { username: req.params.username }
-    });
+    const updatedUser = Users.update(
+      {
+        bio: req.body.newBio,
+      },
+      {
+        // Update the user with the username from the req.params.username
+        where: { username: req.params.username },
+      }
+    );
 
     res.status(200).json(updatedUser);
   } catch (err) {

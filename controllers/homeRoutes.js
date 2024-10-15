@@ -1,21 +1,23 @@
 // Call the router
-const router = require('express').Router();
+const router = require("express").Router();
 
 // Import the models
-const Character = require('../models/Characters');
-const Stories = require('../models/Stories');
-const Quests = require('../models/Quest');
-const Rules = require('../models/Rules');
+const Character = require("../models/Characters");
+const Stories = require("../models/Stories");
+const Quests = require("../models/Quest");
+const Rules = require("../models/Rules");
 
 // URL looks like localhost:3001/
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Find all the character data and put in reverse order
     const characterData = await Character.findAll({
-      order: [['id', 'DESC']]
+      order: [["id", "DESC"]],
     });
     // Make the data plain
-    const characterDataPlain = characterData.map((characters) => characters.get({ plain: true }));
+    const characterDataPlain = characterData.map((characters) =>
+      characters.get({ plain: true })
+    );
 
     // Assign the first three characters to a variable
     const firstCharacter = characterDataPlain[0];
@@ -24,7 +26,7 @@ router.get('/', async (req, res) => {
 
     // Find all the quest data and put in reverse order
     const questData = await Quests.findAll({
-      order: [['id', 'DESC']]
+      order: [["id", "DESC"]],
     });
     // Make the data plain
     const questDataPlain = questData.map((quest) => quest.get({ plain: true }));
@@ -36,10 +38,12 @@ router.get('/', async (req, res) => {
 
     // Find all the story data and put in reverse order
     const storiesData = await Stories.findAll({
-      order: [['id', 'DESC']]
+      order: [["id", "DESC"]],
     });
     // Make the data plain
-    const storiesDataPlain = storiesData.map((story) => story.get({ plain: true }));
+    const storiesDataPlain = storiesData.map((story) =>
+      story.get({ plain: true })
+    );
 
     // Assign the first three stories to a variable
     const firstStory = storiesDataPlain[0];
@@ -48,7 +52,7 @@ router.get('/', async (req, res) => {
 
     // Find all the rule data and put in reverse order
     const ruleData = await Rules.findAll({
-      order: [['id', 'DESC']]
+      order: [["id", "DESC"]],
     });
     // Make the data plain
     const ruleDataPlain = ruleData.map((rule) => rule.get({ plain: true }));
@@ -59,42 +63,48 @@ router.get('/', async (req, res) => {
     const thirdRule = ruleDataPlain[2];
 
     // Render homepage.handlebars and pass in these variables
-    res.render('homepage', {
-      firstCharacter, secondCharacter, thirdCharacter,
-      firstQuest, secondQuest, thirdQuest,
-      firstStory, secondStory, thirdStory,
-      firstRule, secondRule, thirdRule,
+    res.render("homepage", {
+      firstCharacter,
+      secondCharacter,
+      thirdCharacter,
+      firstQuest,
+      secondQuest,
+      thirdQuest,
+      firstStory,
+      secondStory,
+      thirdStory,
+      firstRule,
+      secondRule,
+      thirdRule,
       loggedIn: req.session.loggedIn,
-      user: req.session.user
-     })
+      user: req.session.user,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
 
-
-
 // URL looks like localhost:3001/login
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   // If the user is logged in, send them back to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
   // If the user is not logged in, render login.handlebars
-  res.render('login');
+  res.render("login");
 });
 
 // URL looks like localhost:3001/register
-router.get('/register', (req, res) => {
+router.get("/register", (req, res) => {
   // If the user is logged in, send them back to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
   // If the user is not logged in, render register.handlebars
-  res.render('register');
+  res.render("register");
 });
-  
+
 module.exports = router;

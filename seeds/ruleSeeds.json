@@ -1,23 +1,22 @@
 [
-    {
-        "author": "ethan",
-        "title": "Rule Type 1",
-        "description": "Every time someone says 'hello' everyone drinks"
-
-    },
-    {
-        "author": "nick",
-        "title": "Rule Type 2",
-        "description": "Every time someone says 'goodbye' everyone give each other high fives"
-    },
-    {
-        "author": "bridgett",
-        "title": "Rule Type 3",
-        "description": "Every time someone says 'roll initiative' everyone slaps the DM"
-    },
-    {
-        "author": "jocelyn",
-        "title": "Rule Type 4",
-        "description": "Ok no more rules. Do whatever you want"
-    }
+  {
+    "author": "ethan",
+    "title": "Rule Type 1",
+    "description": "Every time someone says 'hello' everyone drinks"
+  },
+  {
+    "author": "nick",
+    "title": "Rule Type 2",
+    "description": "Every time someone says 'goodbye' everyone give each other high fives"
+  },
+  {
+    "author": "bridgett",
+    "title": "Rule Type 3",
+    "description": "Every time someone says 'roll initiative' everyone slaps the DM"
+  },
+  {
+    "author": "jocelyn",
+    "title": "Rule Type 4",
+    "description": "Ok no more rules. Do whatever you want"
+  }
 ]

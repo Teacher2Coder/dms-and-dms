@@ -1,34 +1,34 @@
 [
-    {
-        "name": "Going into Mordor",
-        "description": "Objective Type 1",
-        "author": "ethan",
-        "quest_giver": "Gandalf",
-        "location": "Mordor",
-        "rewards": "A really cool hat"
-    },
-    {
-        "name": "Raid on the Chocolate Factory!",
-        "description": "Objective Type 2",
-        "author": "nick",
-        "quest_giver": "The Hungry Elf",
-        "location": "The Chocolate Factory",
-        "rewards": "A really cool shirt"
-    },
-    {
-        "name": "Give the Monkey some shoes!",
-        "description": "Objective Type 3",
-        "author": "bridgett",
-        "quest_giver": "A random monkey",
-        "location": "Timbuktu",
-        "rewards": "Some really cool shoes"
-    },
-    {
-        "name": "Take Grandpa Joe to the Apple Sweatshops",
-        "description": "Objective Type 4",
-        "author": "jocelyn",
-        "quest_giver": "Grandpa Joe",
-        "location": "The Apple Headquarters",
-        "rewards": "A really cool umbrella"
-    }
+  {
+    "name": "Going into Mordor",
+    "description": "Objective Type 1",
+    "author": "ethan",
+    "quest_giver": "Gandalf",
+    "location": "Mordor",
+    "rewards": "A really cool hat"
+  },
+  {
+    "name": "Raid on the Chocolate Factory!",
+    "description": "Objective Type 2",
+    "author": "nick",
+    "quest_giver": "The Hungry Elf",
+    "location": "The Chocolate Factory",
+    "rewards": "A really cool shirt"
+  },
+  {
+    "name": "Give the Monkey some shoes!",
+    "description": "Objective Type 3",
+    "author": "bridgett",
+    "quest_giver": "A random monkey",
+    "location": "Timbuktu",
+    "rewards": "Some really cool shoes"
+  },
+  {
+    "name": "Take Grandpa Joe to the Apple Sweatshops",
+    "description": "Objective Type 4",
+    "author": "jocelyn",
+    "quest_giver": "Grandpa Joe",
+    "location": "The Apple Headquarters",
+    "rewards": "A really cool umbrella"
+  }
 ]
