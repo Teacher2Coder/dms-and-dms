@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Rules extends Model { }
 
+// Define the rules table
 Rules.init(
   {
     id: {

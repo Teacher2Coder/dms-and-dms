@@ -1,4 +1,6 @@
+// Call the router
 const router = require('express').Router();
+// Import the model
 const Comment = require('../../../models/Comment');
 
 // URL looks like this: localhost:3001/api/comments
@@ -12,6 +14,7 @@ router.post('/', async (req, res) => {
             for: req.body.dataFor,
             category_id: req.body.primaryKey
         });
+        
         res.status(200).json(commentData);
     } catch (err) {
         console.error(err);

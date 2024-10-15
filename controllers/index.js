@@ -24,18 +24,10 @@ router.use('/cards', cardRoutes);
 router.get('/about', async (req, res) => {
     try {
         // Render about.handlebars and pass in variables
-        res.render('about', { loggedIn: req.session.loggedIn, user: req.session.user })
-    } catch (err) {
-        console.error(err);
-        res.status(500).json(err);
-    }
-});
-
-// URL looks like localhost:3001/contact
-router.get('/contact', async (req, res) => {
-    try {
-        // Render contact.handlebars and pass in variables
-        res.render('contact', { loggedIn: req.session.loggedIn, user: req.session.user })
+        res.render('about', { 
+            loggedIn: req.session.loggedIn, 
+            user: req.session.user 
+        });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -46,7 +38,10 @@ router.get('/contact', async (req, res) => {
 router.get('/dice', async (req, res) => {
     try {
         // Render dice.handlebars and pass in variables
-        res.render('dice', { loggedIn: req.session.loggedIn, user: req.session.user })
+        res.render('dice', { 
+            loggedIn: req.session.loggedIn, 
+            user: req.session.user 
+        });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

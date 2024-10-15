@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Stories extends Model {}
 
+// Define the stories table
 Stories.init(
   {
     id: {

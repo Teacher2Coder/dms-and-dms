@@ -2,6 +2,7 @@
     
 <main>
   <div>
+    {{!-- If the user authored the character, add these buttons --}}
     {{#if canEdit}}
     <div style="display: flex; flex-direction: row; justify-content: space-evenly; margin-bottom: 20px;">
       <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-character">Edit this Character</button>
@@ -58,11 +59,14 @@
 <section style="margin-top: 20px; display: flex; flex-direction: column; justify-content: center;" class="comment-section card">
   <h3 style="text-align: center; margin-top: 20px;">Comments</h3>
   <button class="btn btn-danger comment-btn" data-bs-toggle="modal" data-bs-target="#add-comment">Add your own comment!</button>
+  {{!-- Add the comment partial --}}
   {{> comments}}
 </section>
 
+{{!-- Add the add-comment modal --}}
 {{> comment-modal}}
 
+{{!-- If the user authored the character, add these modals --}}
 {{#if canEdit}}
 {{> edit-character-modal}}
 {{> delete-modal}}

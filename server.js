@@ -19,13 +19,13 @@ app.set('view engine', 'handlebars');
 
 // Session configuration
 const sess = {
-    secret: 'Super secret stuff here',
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize,
-    }),
+  secret: 'Super secret stuff here',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
 };
 
 // Tell the server to use express-session
@@ -41,5 +41,5 @@ app.use(routes);
 
 // Sync sequelize and start the server
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
 });

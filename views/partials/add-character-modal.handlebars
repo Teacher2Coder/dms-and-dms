@@ -16,69 +16,78 @@
                 <textarea class="form-control" id="description-input"></textarea>
             </div>
             <div class="mb-3">
-                <lable class="form-label">Class</lable>
-                <select class="form-select" aria-label="Class Dropdown" id="class-input">
-                    <option selected>Choose a class</option>
-                    <option value="Barbarian">Barbarian</option>
-                    <option value="Bard">Bard</option>
-                    <option value="Cleric">Cleric</option>
-                    <option value="Druid">Druid</option>
-                    <option value="Fighter">Fighter</option>
-                    <option value="Monk">Monk</option>
-                    <option value="Paladin">Paladin</option>
-                    <option value="Ranger">Ranger</option>
-                    <option value="Rogue">Rogue</option>
-                    <option value="Sorcerer">Sorcerer</option>
-                    <option value="Warlock">Warlock</option>
-                    <option value="Wizard">Wizard</option>
-                </select>
+                <lable class="form-label">Race</lable>
+                <input class="form-control" type="text" id="race-input">
+            </div>
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+                <div class="mb-3" style="width: 49%;">
+                    <lable class="form-label">Class</lable>
+                    <select class="form-select" aria-label="Class Dropdown" id="class-input">
+                        <option selected>Choose a class</option>
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Cleric">Cleric</option>
+                        <option value="Druid">Druid</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Paladin">Paladin</option>
+                        <option value="Ranger">Ranger</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Warlock">Warlock</option>
+                        <option value="Wizard">Wizard</option>
+                    </select>
+                </div>
+                <div class="mb-3" style="width: 49%;">
+                    <lable class="form-label">Alignment</lable>
+                    <select class="form-select" aria-label="Class Dropdown" id="alignment-input">
+                        <option selected>Choose an Alignment</option>
+                        <option value="Lawful Good">Lawful Good</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="Lawful Evil">Lawful Evil</option>
+                        <option value="Neutral Good">Neutral Good</option>
+                        <option value="True Neutral">True Neutral</option>
+                        <option value="Neutral Evil">Neutral Evil</option>
+                        <option value="Chaotic Good">Chaotic Good</option>
+                        <option value="Chaotic Neutral">Chaotic Neutral</option>
+                        <option value="Chaotic Evil">Chaotic Evil</option>
+                    </select>
+                </div>
             </div>
             <div class="mb-3">
                 <lable class="form-label">Skills</lable>
                 <input class="form-control" type="text" id="skill-input">
             </div>
-            <div class="mb-3">
-                <lable class="form-label">Race</lable>
-                <input class="form-control" type="text" id="race-input">
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Alignment</lable>
-                <select class="form-select" aria-label="Class Dropdown" id="alignment-input">
-                    <option selected>Choose an Alignment</option>
-                    <option value="Lawful Good">Lawful Good</option>
-                    <option value="Lawful Neutral">Lawful Neutral</option>
-                    <option value="Lawful Evil">Lawful Evil</option>
-                    <option value="Neutral Good">Neutral Good</option>
-                    <option value="True Neutral">True Neutral</option>
-                    <option value="Neutral Evil">Neutral Evil</option>
-                    <option value="Chaotic Good">Chaotic Good</option>
-                    <option value="Chaotic Neutral">Chaotic Neutral</option>
-                    <option value="Chaotic Evil">Chaotic Evil</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Strength</lable>
-                <input class="form-control" type="number" id="strength-input">
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Dexterity</lable>
-                <input class="form-control" type="number" id="dexterity-input">
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Constitution</lable>
-                <input class="form-control" type="number" id="constitution-input">
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Intellegence</lable>
-                <input class="form-control" type="number" id="intellegence-input">
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Wisdom</lable>
-                <input class="form-control" type="number" id="wisdom-input">
-            </div>
-            <div class="mb-3">
-                <lable class="form-label">Charisma</lable>
-                <input class="form-control" type="number" id="charisma-input">
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+                <h5  style="margin-top: 20px;">Character Attributes</h5>
+                <p style="font-style: italic; font-size: small;">
+                    Every character starts with 8 points in each attribute
+                    and 27 points can be added to their base scores
+                </p>
+                <div class="mb-3" style="width: 30%;">
+                    <lable class="form-label">Strength</lable>
+                    <input class="form-control" type="number" id="strength-input">
+                </div>
+                <div class="mb-3" style="width: 30%;">
+                    <lable class="form-label">Dexterity</lable>
+                    <input class="form-control" type="number" id="dexterity-input">
+                </div>
+                <div class="mb-3" style="width: 30%;">
+                    <lable class="form-label">Constitution</lable>
+                    <input class="form-control" type="number" id="constitution-input">
+                </div>
+                <div class="mb-3" style="width: 30%;">
+                    <lable class="form-label">Intellegence</lable>
+                    <input class="form-control" type="number" id="intellegence-input">
+                </div>
+                <div class="mb-3" style="width: 30%;">
+                    <lable class="form-label">Wisdom</lable>
+                    <input class="form-control" type="number" id="wisdom-input">
+                </div>
+                <div class="mb-3" style="width: 30%;">
+                    <lable class="form-label">Charisma</lable>
+                    <input class="form-control" type="number" id="charisma-input">
+                </div>
             </div>
         </form>
       </div>

@@ -25,4 +25,5 @@ const registerFormHandler = async (event) => {
     }
 }
 
+// Add click event
 document.querySelector('#register-btn').addEventListener('click', registerFormHandler);

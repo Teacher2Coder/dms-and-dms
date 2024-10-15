@@ -9,14 +9,17 @@ const user = document.querySelector('#user').dataset.user;
 const handleEditBio = async (event) => {
     event.preventDefault();
 
+    // Assign the inputted text to a variable
     const newBio = editedBio.value;
 
+    // Send the inputted text to the api
     const response = await fetch(`/api/users/${user}`, {
         method: 'PUT',
         body: JSON.stringify({ newBio }),
         headers: { 'Content-Type': 'application/json' }
     })
 
+    // If the response is ok, reload the page
     if (response.ok) {
         location.reload();
     } else {
@@ -24,4 +27,5 @@ const handleEditBio = async (event) => {
     }
 }
 
+// Add click event
 document.querySelector('#save-bio').addEventListener('click', handleEditBio);

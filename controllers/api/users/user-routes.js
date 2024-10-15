@@ -1,4 +1,6 @@
+// Call the router
 const router = require('express').Router();
+// Import the model
 const Users = require('../../../models/User');
 
 // URL looks like localhost:3001/api/users
@@ -14,9 +16,7 @@ router.post('/', async (req, res) => {
     // Save the session with these values passed in
     req.session.save(() => {
       req.session.loggedIn = true;
-
       req.session.user = dbUserData.username;
-  
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -30,7 +30,9 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     // Find the user with the username from the req.body
-    const userData = await Users.findOne({ where: { username: req.body.username } });
+    const userData = await Users.findOne({
+      where: { username: req.body.username }
+    });
 
     // If the user isn't found, send the error message
     if (!userData) {
@@ -83,7 +85,6 @@ router.post('/logout', (req, res) => {
 // URL looks like localhost:3001/api/users/username
 router.put('/:username', async (req, res) => {
   try {
-
     // Update the user with the bio from the req.body
     const updatedUser = Users.update({
       bio: req.body.newBio
