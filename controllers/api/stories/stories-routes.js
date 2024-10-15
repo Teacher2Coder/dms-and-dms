@@ -1,4 +1,6 @@
+// Call the router
 const router = require('express').Router();
+// Import the model
 const Stories = require('../../../models/Stories');
 
 // URL looks like this: localhost:3001/api/stories
@@ -49,7 +51,10 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         // Delete the story where the story's id is req.params.id
-        const storyData = Stories.destroy({ where: { id: req.params.id } });
+        const storyData = Stories.destroy({ 
+            where: { id: req.params.id } 
+        });
+        
         res.status(200).json(storyData);
     } catch (err) {
         console.error(err);

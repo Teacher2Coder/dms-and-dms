@@ -1,4 +1,6 @@
+// Call the router
 const router = require('express').Router();
+// Import the model
 const Quests = require('../../../models/Quest');
 
 // URL looks like this: localhost:3001/api/quests
@@ -14,6 +16,7 @@ router.post('/', async (req, res) => {
             location: req.body.locationInput,
             rewards: req.body.rewardsInput
         });
+        
         res.status(200).json(questData);
     } catch (err) {
         console.error(err);
@@ -21,7 +24,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// URL looks like this: localhost:3001/api/characters/1
+// URL looks like this: localhost:3001/api/quests/1
 router.put('/:id', async (req, res) => {
     try {
         // Update the quest with the data from the req.body
@@ -43,11 +46,14 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-// URL looks like this: localhost:3001/api/characters/1
+// URL looks like this: localhost:3001/api/quests/1
 router.delete('/:id', async (req, res) => {
     try {
         // Delete the character where the quest's id is req.params.id
-        const questData = Quests.destroy({ where: { id: req.params.id } });
+        const questData = Quests.destroy({
+            where: { id: req.params.id }
+        });
+
         res.status(200).json(questData);
     } catch (err) {
         console.error(err);

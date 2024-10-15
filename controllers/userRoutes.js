@@ -16,11 +16,21 @@ const withAuth = require('../utils/auth');
 router.get('/:username', withAuth, async (req, res) => {
     try {
         // Get user data, the user's characters, quests, stories and rules
-        const userData = await Users.findOne({ where: { username: req.params.username }});
-        const characterData = await Characters.findAll({ where: { author: req.params.username } });
-        const questData = await Quests.findAll({ where: { author: req.params.username } });
-        const storyData = await Stories.findAll({ where: { author: req.params.username } });
-        const ruleData = await Rules.findAll({ where: { author: req.params.username } })
+        const userData = await Users.findOne({ 
+            where: { username: req.params.username }
+        });
+        const characterData = await Characters.findAll({ 
+            where: { author: req.params.username } 
+        });
+        const questData = await Quests.findAll({ 
+            where: { author: req.params.username } 
+        });
+        const storyData = await Stories.findAll({ 
+            where: { author: req.params.username } 
+        });
+        const ruleData = await Rules.findAll({ 
+            where: { author: req.params.username } 
+        });
 
         // Make all of that data plain
         const userDataPlain = userData.get({ plain: true });

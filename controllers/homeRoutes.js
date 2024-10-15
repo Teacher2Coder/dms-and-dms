@@ -6,11 +6,6 @@ const Character = require('../models/Characters');
 const Stories = require('../models/Stories');
 const Quests = require('../models/Quest');
 const Rules = require('../models/Rules');
-const User = require('../models/User');
-
-// Import authorization helper
-const withAuth = require('../utils/auth');
-
 
 // URL looks like localhost:3001/
 router.get('/', async (req, res) => {

@@ -1,4 +1,6 @@
+// Call the router
 const router = require('express').Router();
+// Import the model
 const Characters = require('../../../models/Characters');
 
 // URL looks like this: localhost:3001/api/characters
@@ -21,6 +23,7 @@ router.post('/', async (req, res) => {
             wisdom: req.body.wisdomInput,
             charisma: req.body.charismaInput
         });
+        
         res.status(200).json(characterData);
     } catch (err) {
         console.error(err);
@@ -50,6 +53,7 @@ router.put('/:id', async (req, res) => {
             // Update the character with the id that matches the req.params.id
             where: { id: req.params.id }
         });
+
         res.status(200).json(characterData);
     } catch (err) {
         console.error(err);
@@ -61,7 +65,10 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         // Delete the character where the character's id is req.params.id
-        const characterData = Characters.destroy({ where: { id: req.params.id } });
+        const characterData = Characters.destroy({ 
+            where: { id: req.params.id } 
+        });
+
         res.status(200).json(characterData);
     } catch (err) {
         console.error(err);

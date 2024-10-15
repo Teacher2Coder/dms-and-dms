@@ -1,7 +1,9 @@
+// Call the router
 const router = require('express').Router();
+// Import the models
 const Rules = require('../../../models/Rules');
 
-// URL looks like this: localhost.3001/api/characters
+// URL looks like this: localhost:3001/api/rules
 router.post('/', async (req, res) => {
     try {
         // Create a new character with the data from the req.body
@@ -11,6 +13,7 @@ router.post('/', async (req, res) => {
             author: req.session.user,
             description: req.body.descriptionInput,
         });
+
         res.status(200).json(ruleData);
     } catch (err) {
         console.error(err);
@@ -30,6 +33,7 @@ router.put('/:id', async (req, res) => {
             // Update the rule with the data from the req.body
             where: { id: req.params.id }
         });
+
         res.status(200).json(ruleData);
     } catch (err) {
         console.error(err);
@@ -43,7 +47,8 @@ router.delete('/:id', async (req, res) => {
         // Delete the rule where the rule's id is req.params.id
         const ruleData = await Rules.destroy({
             where: { id: req.params.id }
-        })
+        });
+
         res.status(200).json(ruleData);
     } catch (err) {
         console.error(err);

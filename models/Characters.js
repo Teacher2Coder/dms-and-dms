@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 
 class Characters extends Model { }
 
+// Define the character table
 Characters.init(
   {
     id: {

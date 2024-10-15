@@ -40,7 +40,9 @@ router.get('/:id', withAuth, async (req, res) => {
         const singleQuestData = await Quest.findByPk(req.params.id);
 
         // Find the comments on this particular quest
-        const commentData = await Comments.findAll({ where: { for: 'quests', category_id: req.params.id }})
+        const commentData = await Comments.findAll({ 
+            where: { for: 'quests', category_id: req.params.id }
+        });
 
         // Make the data plain
         const quest = singleQuestData.get({ plain: true });
