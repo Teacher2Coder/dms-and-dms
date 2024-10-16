@@ -28,8 +28,6 @@ const handleAddCharacter = async (event) => {
     const pointCount = parseInt(strengthInput) + parseInt(dexterityInput) + parseInt(constitutionInput) + 
     parseInt(intelligenceInput) + parseInt(wisdomInput) + parseInt(charismaInput);
 
-    console.log(pointCount);
-
     // If all fields are filled out and the point total is 75, run this code
     if (nameInput && descriptionInput && classInput &&
         skillInput && raceInput && alignmentInput &&
